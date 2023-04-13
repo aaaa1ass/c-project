@@ -1,77 +1,54 @@
-#include <stdio.h> // 헤더파일에 정의된 함수가 있다 stdio.h 기본 입출력 헤더파일
-void main() //<--- 프로그램의 진입접, 하나만 있어야 함
-{//프로그램의 시작
+#include <stdio.h>
+void main()
+{
 
-	//변수: 메모리 공간을 확보
-	//자료형: 데이터를 저장하기 위해 정해진 데이터의 형태
+#pragma region 서식지정자
+	/*
+	char character = 'B';
+	int data = 100;
+	float decimal = 99.966666333f;
+	//printf(data); -> X
+	//서식 지정자: 출력하기 한 자료형의 정보를 명시적으로 지정
+	// %c 문자
+	// %d 정수
+	// %f 실수 (float)
 	// 
-	// 자료형 변수의 이름;
-	// int data;
-
-#pragma region 자료형의 종류
-	/*
-	// char 한 문자 1byte
-	// short 정수 2byte
-	// int 정수 4byte
-	// float 실수 4byte
-	// double 실수 8byte		
-	// long double 8~16
+	//서식과 변수 일치시키자
+	printf("value of character: %c\n", character);
+	printf("value of data: %d\n", data);
+	//float -> 소수점 이하 6자리까지 표기
+	printf("value of decimal: %f\n", decimal);
+	printf("data: %d, decimal: %f", data, decimal);
 	*/
 #pragma endregion
 
-#pragma region 대입연산자 '='
-	//int num = 100;
-	//char c = 'A';
-	//float pi = 3.14f;
+#pragma region 비트
+	//데이터를 나타내는 최소 단위 0 or 1
+	//조합으로 논리 계산을 수행하는 단위
+	//8 Bit -> 1 Byte
+	//
+	// 비트 연산자: 비트 단위로 논리 연산 수행
+	// AND
+	// 두 개의 피연산자가 모두 1이면 1을 반환
+	char num1 = 10; //1010
+	char num2 = 15; //1111
+	char num3 = 129;
+	printf("num1 num2 AND 연산: %d\n", num1 & num2);
+	// OR
+	// 두 개의 피연산자 중 하나라도 1이 있으면 1을 반환
+	printf("num1 num2 OR 연산: %d\n", num1 | num2);
+	// XOR
+	// 두 개의 피연산자가 같으면 0을 반환, 다르면 1을 반환
+	printf("num1 num2 XOR 연산: %d\n", num1 ^ num2);
+	// NOT
+	// 비트를 반전
+	printf("num1 NOT 연산: %d\n", ~num1);
+	// 첫 번째 비트: 부호 비트 
+	// 0->양수 1->음수
+	printf("num3의 값: %d", num3);
+
+
 #pragma endregion
-
-#pragma region 변수 이름 규칙
-	/*
-	1. 예약어를 사용할 수 없음(이미 사용하고 있는 단어) ex)int int = 100;
-	2. 숫자를 사용할 수 있으나 첫번째는 안됨 ex) int hp1 = 100; -> 가능 int 1hp = 100; -> 불가능
-	3. 대소문자를 구분 ex) int attack = 100; int ATTACK = 200; attack != ATTACK
-	4. 공백 포함 안됨
-	5. 특수 기호 '$', '_' 가능
-	*/
-#pragma endregion
-
-#pragma region 변수의 초기화
-	// 변수의 값을 최초로 저장해주는 과정
-	int exp = 0; //변수의 선언
-	exp = 999;
-
-#pragma endregion
-
-#pragma region 상수
-	//프로그램이 실행되는 동안 값을 변경할 수 없는 메모리 공간
-	const float pi = 3.141592;
-	//pi = 5; 값을 변경할 수 없다.
-	//심볼릭 상수: 메모리 공간을 가지고 있는 상수
-	//리터럴 상수: 메모리 공간을 가지지 않는 상수
-	//3.141592 -> 리터럴 값
-#pragma endregion
-
-#pragma region 컴파일
-	//사람의 언어를 컴퓨터가 알게 바꿈
-#pragma endregion
-
-#pragma region 산술 연산자
-	int num1;
-	int num2;
-	int num3;
-	int num4;
-	int num5;
-	int B = 1;
-	int C = 2;
-	int E = 3;
-	const int F = 4;
 	
-	num1 = B + C;
-	num2 = E - F;
-	num3 = 5 * B;
-	num4 = 
-#pragma endregion
-
-
-
-}//프로그램의 끝
+	
+}
