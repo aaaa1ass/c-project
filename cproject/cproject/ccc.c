@@ -1,54 +1,143 @@
 #include <stdio.h>
 void main()
 {
-
-#pragma region 서식지정자
-	/*
-	char character = 'B';
-	int data = 100;
-	float decimal = 99.966666333f;
-	//printf(data); -> X
-	//서식 지정자: 출력하기 한 자료형의 정보를 명시적으로 지정
-	// %c 문자
-	// %d 정수
-	// %f 실수 (float)
-	// 
-	//서식과 변수 일치시키자
-	printf("value of character: %c\n", character);
-	printf("value of data: %d\n", data);
-	//float -> 소수점 이하 6자리까지 표기
-	printf("value of decimal: %f\n", decimal);
-	printf("data: %d, decimal: %f", data, decimal);
-	*/
+#pragma region 오버플로우
+	// 특정한 자료형이 표현할 수 있는 최댓값의 범위를 넘어서 연산을 수행
+	// char: 1byte (-128 ~ +127)
+	char data = 128;
+	printf("data: %d\n", data);
 #pragma endregion
 
-#pragma region 비트
-	//데이터를 나타내는 최소 단위 0 or 1
-	//조합으로 논리 계산을 수행하는 단위
-	//8 Bit -> 1 Byte
+#pragma region 언더플로우
+	//특정한 자료형이 표현할 수 있는 최솟값의 범위를 너어서 연산을 수행
+	char value = -129;
+	printf("value: %d\n", value);
+#pragma endregion
+
+#pragma region 관계연산자
+	// 두 개의 피연산자의 값을 비교하여 그 결과를 0 or 1로 나타내는 연산자
+
+	// A < B: B가 A보다 크다
+	// A > B
+	// A <= B: B가 A보다 크거나 같다
+	// A >= B
+	// A == B: A와 B는 같다
+	// A != B: A와 B는 같지 않다
+	// 0 -> 거짓
+	// 1 -> 참
 	//
-	// 비트 연산자: 비트 단위로 논리 연산 수행
-	// AND
-	// 두 개의 피연산자가 모두 1이면 1을 반환
-	char num1 = 10; //1010
-	char num2 = 15; //1111
-	char num3 = 129;
-	printf("num1 num2 AND 연산: %d\n", num1 & num2);
-	// OR
-	// 두 개의 피연산자 중 하나라도 1이 있으면 1을 반환
-	printf("num1 num2 OR 연산: %d\n", num1 | num2);
-	// XOR
-	// 두 개의 피연산자가 같으면 0을 반환, 다르면 1을 반환
-	printf("num1 num2 XOR 연산: %d\n", num1 ^ num2);
-	// NOT
-	// 비트를 반전
-	printf("num1 NOT 연산: %d\n", ~num1);
-	// 첫 번째 비트: 부호 비트 
-	// 0->양수 1->음수
-	printf("num3의 값: %d", num3);
-
-
+	int A = 10;
+	int B = 20;
+	int C = 30;
+	printf("A < B: %d\n", A < B);
+	printf("A > B: %d\n", A > B);
+	printf("A <= B: %d\n", A <= B);
+	printf("A >= B: %d\n", A >= B);
+	printf("A == B: %d\n", A == B);
+	printf("A != B: %d\n", A != B);
 #pragma endregion
+
+#pragma region 조건문(if, else if, else)
+	//if: 어떤 특정한 조건을 비교하여 조건이 맞다면 실행하는 명령문
 	
+	//만약(조건)
+	if (15 == 15)
+	{
+		//조건이 참이면 { } 실행
+		printf("15는 15와 같다.\n");
+	}
+
+	//else if: if문의 조건이 맞지 않을 때 else if문의 조건이 맞다면 실행하는 명령문
+	if (5 < 1)
+	{
+		printf("if의 조건\n");
+	}
+	else if (5 > 1)
+	{
+		printf("else if의 조건\n");
+	}
+	else if (5 <= 1)
+	{
+		//else if는 여러 개 선언 가능
+		;
+	}
+	
+	//else: if와 else if문의 조건이 다 맞지 않을 때 실행하는 명령문
+	if('A' == 'B')
+	{
+		printf("if\n");
+	}
+	else if ('C' == 'D')
+	{
+		printf("else if\n");
+	}
+	else
+	{
+		printf("else\n");
+	}
+#pragma endregion
+
+#pragma region 논리 연산자
+	// && AND
+	if ('A' == 'A' && 'A' <= 'A')
+	{
+		printf("AND의 조건이 성립\n");
+	}
+	// || OR
+	if ('A' == 'A' || 'A' == 'B')
+	{
+		printf("OR의 조건이 성립\n");
+	}
+	// ! NOT
+	if ('A')
+	{
+		printf("NOT의 조건이 성립\n");
+	}
+#pragma endregion
+
+#pragma region 사분면
+	int x = 0;
+	int y = 0;
+	int z = 0;
+	
+	if (x == 0 && y == 0)
+	{
+		printf("원점\n");
+	}
+	else if(x && y == 0)
+	{
+		printf("x절편\n");
+	}
+	else if(x == 0 && y)
+	{
+		printf("y절편\n");
+	}
+	else
+	{
+		if (x > 0 && y > 0)
+		{
+			z = 1;
+		}
+		else if (x < 0 && y > 0)
+		{
+			z = 2;
+		}
+		else if (x < 0 && y < 0)
+		{
+			z = 3;
+		}
+		else if (x > 0 && y < 0)
+		{
+			z = 4;
+		}
+		else
+		{
+			z = 0;
+		}
+		printf("제 %d 사분면\n",z);
+	}
+	
+#pragma endregion
+
 	
 }
