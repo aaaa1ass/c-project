@@ -1,3 +1,2 @@
 ﻿  ccc.c
-C:\Users\Administrator\Desktop\새 폴더 (2)\c-project\cproject\cproject\ccc.c(13,16): warning C4305: 'initializing': truncation from 'int' to 'char'
-  cproject.vcxproj -> C:\Users\Administrator\Desktop\새 폴더 (2)\c-project\cproject\x64\Debug\cproject.exe
+  cproject.vcxproj -> C:\Users\Administrator\Desktop\JJJ5\c-project\cproject\x64\Debug\cproject.exe
