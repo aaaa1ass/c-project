@@ -1,2 +1,5 @@
 ﻿  ccc.c
+C:\Users\Administrator\Desktop\JJJ5\c-project\cproject\cproject\ccc.c(82,10): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Administrator\Desktop\JJJ5\c-project\cproject\cproject\ccc.c(83,9): warning C4477: 'printf' : format string '%lf' requires an argument of type 'double', but variadic argument 1 has type 'int'
+C:\Users\Administrator\Desktop\JJJ5\c-project\cproject\cproject\ccc.c(80,1): warning C4133: 'initializing': incompatible types - from 'double *' to 'int *'
   cproject.vcxproj -> C:\Users\Administrator\Desktop\JJJ5\c-project\cproject\x64\Debug\cproject.exe

@@ -1,84 +1,87 @@
 #include <stdio.h>
 void main()
 {
-#pragma region switch
-	int count = 3;
-
-	//switch: 어떤 결과에 따라 그 결과부터 실행되는 명령문
-	// 조건에 해당하는 값에 따라 조건의 위치로 이동
-	switch (count)// <- 값
-	{
-		//break: 특정 지점에서 분기를 탈출하는 제어문
-	case 0: printf("count is 0.\n");
-		break;
-	case 1: printf("count is 1.\n");
-		break;
-	case 2: printf("count is 2.\n");
-		break;
-	//default:printf("예외\n");
-				 
-	}			 
+#pragma region while
+	//특정 조건이 거짓이 될 때까지 반복
+	int count = 5;
+	while (0)//조건
+	{	
+		printf("게임 실행 %d\n", count); 
+		count--;
+	}
 #pragma endregion
 
-#pragma region 증감 연산자
-	/*
-	//피연산자를 증감할 때 사용하는 연산자
-	
-	//전위 증감 연산자
-	// 변수의 값을 증감시킨 후에 연산을 수행
-	int a = 0;
-	int result_1 = 0;
-
-	result_1 = ++a;
-	printf("result_1의 값: %d\n", result_1);
-	
-	result_1 = --result_1;
-	printf("result_1의 값: %d\n", result_1);
-
-	//후위 증감 연산자
-	//연산을 수행한 다음 변수의 값을 증감
-	int b = 0;
-	int result_2 = 0;
-
-	result_2 = b++;
-	printf("result_2의 값: %d\n", result_2);
-	
-	result_2 = b--;
-	printf("result_2의 값: %d\n", result_2);
-	*/
-#pragma endregion
-	
-#pragma region for
-	//초기식을 연산하여 조건식의 결과에 따라 특정한 횟수만큼 반복
-	//for(초기식;조건식;증감식;) 조건이 거짓이 될 때까지 반복
-	for (int i = 0; i < 5; i++)
+#pragma region continue
+	//해당 조건문만 실행하지 않고 반복문을 이어서 실행하는 제어문
+	for (int i = 1; i <= 0; i++)
 	{
-		//printf("게임 중\n");
-	}
-	//초기값을 1~5의 값으로 출력
-	for (int i = 1; i < 6; i++)
-	{
-		//무한 루프를 피하자
-		//printf("%d\n", i);
-	}
-	int a = 0;
-	for (int i = 1; i <= 10; i++)
-	{
-		a = a + i;
-		//복합 대입 연산 a += i; a-= i;(*=, /=)
-	}
-	//printf("a is %d", a);
-
-	//이중 for문
-	for (int i = 0; i < 3; i++)
-	{
-		for (int j = 0; j < 3; j++)
+		if (i == 3)
 		{
-			printf("안쪽 for문\n");
+			continue;
 		}
-		printf("바깥쪽 for문\n");
+		printf("%d ", i);
 	}
 #pragma endregion
 
+#pragma region 형 변환
+	//다른 자료형의 변수끼리 연산이 이루어질 때 변환
+	
+	//암묵적 형 변환
+	//다른 자료형끼리 연산할 때 크기가 큰 자료형으로 변환
+	//char < short < int < float < double
+	int integer = 10;
+	float decimal = 2.5f;
+	// 12.5 <- 10.0(실수) + 2.5(실수)
+	float result = integer + decimal;
+	printf("result: %f\n", result);
 
-}
+	//명시적 형 변환
+	//사용자가 직접 자료형을 변환
+	// flaot 메모리 2.0 = 5 / 2
+	// 정수끼리의 연산은 정수만 나온다
+	// 
+	int a = 5;
+	int b = 2;
+	float result1 = (float)a/b;
+	printf("result1: %f\n", result1);
+#pragma endregion
+
+#pragma region 주소 연산자
+	//변수의 주소값을 반환
+	//시작 주소값
+	int data = 69;
+	//%p: 데이터의 주소를 출력
+	//64비트 -> 포인터 8바이트
+	//32비트 -> 포인터 4바이트 
+	
+
+	//변수의 주소는 실행할 때마다 바뀐다.
+	//printf("data 주소: %p\n", &data);
+#pragma endregion
+
+#pragma region 포인터
+	//메모리의 주솟값을 저장할 수 있는 변수
+	int box = 100;
+	int box1 = 999;
+	int* ptr = &box;
+	//포인터 변수도 메모리 공간이 있고 변수의 주소를 저장하면 해당 변수의 시작 주소를 가리킨다
+	printf("ptr 값: %p\n", ptr);
+	printf("box 주소값 %p\n", &box);
+	printf("ptr 주소값 %p\n", &ptr);
+	printf("box 값: %d\n", box);
+	*ptr = 600;
+	printf("box 값: %d\n", box);
+	ptr = &box1;
+	*ptr = -999;
+	printf("box 값: %d\n", box);
+	printf("box1 값: %d\n", box1);
+	//변수의 자료형과 포인터 변수의 자료형이 일치해야 한다
+	double health = 10.5;
+	int* ptr1 = &health;
+	printf("ptr1 값: %p\n", ptr1);
+	*ptr1 = 51.5;
+	printf("ptr1가 가리키는 값: %lf\n", *ptr1);
+	
+#pragma endregion		
+}			
+			
