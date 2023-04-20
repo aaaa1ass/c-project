@@ -1,80 +1,87 @@
 #include <stdio.h>
 void main()
 {
-	//포인터 상수화 2가지
-	//상수 지시 포인터, 포인터 상수
-#pragma region 상수지시포인터
-	//포인터 변수를  상수로 선언, 가리키고 있는 주소에 있는 값을 변경할 수 없도록 설정
+#pragma region 배열
+	//같은 자료형의 변수로 이뤄진 유한 집합
+	int array[5];
+
+	//첫 번째 원소(index)는 0부터 시작
+	array[0] = 100;
+	array[1] = 200;
+	array[2] = 300;
+	array[3] = 400;
+	array[4] = 500;
+	//배열 크기는 컴파일 시점부터 고정된 메모리를 가짐
+	//array[5] X
+
+	for (int i = 0; i < 5; i++)
+		printf("array[%d]: %d\n", i, array[i]);
+
+						//	[0]		[1]		[2]
+	float item_list[3] = { 15.5f, 33.3f, 67.62f };
+	//배열 메모리 공간은 실행동안 변경 불가
+	for (int i = 0; i < 3; i++)
+		printf("item_list[%d]: %f\n", i, item_list[i]);
+	
+	//배열 크기 생략 가능
+	//초기화 목록에서 설정한 요소에 따라 크기 결정
+	char string[] = { 'a','b','c' };
+
+	//배열의 이름은 배열의 시작 주소를 가리킨다
+	printf("string 배열 주소:  %p\n", string);
+	printf("string[0] 주소:  %p\n", &string[0]);
+
+	//배열과 포인터
 	int data = 100;
-	int data1 = 20;
-	const int* ptr = &data;
-	//*ptr = 300; 역참조가 상수화되었다
-	//printf("ptr 값: %p\n", ptr);
-	ptr = &data1;
-	//printf("ptr 값: %p\n", ptr);
+	int* ptr = &data;
+	printf("ptr 값: %p\n", ptr);
+	printf("ptr + 1: %p\n", ptr + 1);
 #pragma endregion
 
-#pragma region 포인터상수
-	//상수로 선언한 포인터이므로, 해당 변수의 값을 변경할 수 없지만, 다른 주소 값을 가리킬 수 있다
-	int value1 = 100;
-	int* const ptr1 = &value1;//포인터 변수를 상수화
-	//printf("value1 값: %d\n", value1);
-	*ptr1 = 999;//역참조 가능
-	//printf("value1 값: %d\n", value1);
-	//ptr1 = &value2; 포인터 변수가 상수화되었다
+#pragma region 시프트 연산자
+	//비트 값을 주이진 숫자만큼 부호 방향으로 이동
+	// >> 비트값을 주어진 숫자만큼 오른쪽으로 이동
+	// << 왼쪽으로
+
+	char value = 10; // 0000 1010
+	printf("value 값: %d\n", value);
+	printf("value 오른쪽 두 번 비트 연산: %d\n", value >> 2);
+	// 0000 1010 -> 0000 0101 -> 0000 0010
+	printf("value 왼쪽 세 번 비트 연산: %d\n", value << 3);
+	// 0000 1010 -> 0001 0100 -> 0010 1000 -> 0101 0000
+
 #pragma endregion
 
-#pragma region sizeof()
-	float health = 100;
-	int* pointer;
-	printf("char 크기: %d\n", sizeof(char));
-	printf("short 크기: %d\n", sizeof(short));
-	printf("int 크기: %d\n", sizeof(int));
-	printf("long 크기: %d\n", sizeof(long));
-	printf("float 크기: %d\n", sizeof(health));
-	printf("double 크기: %d\n", sizeof(double));
-	printf("long double 크기: %d\n", sizeof(long double));
-	printf("pointer 크기: %d\n", sizeof(pointer));
-	printf("\n");
-#pragma endregion
+// 7 % 5 (모듈러 연산)
 
-#pragma region 구구단
-	//for (int i = 1; i <= 9; i++) {
-	//	for (int j = 2; j <= 9; j++) {
-	//		printf("%d x %d = %d   ", j, i, i * j);
-	//		if (i * j < 10)
-	//			printf(" ");
-	//	}
-	//	printf("\n");
-	//}
-#pragma endregion
-
-#pragma region scanf입력함수
-	//표준 입력 함수, 여러 데이터를 서식에 맞춰 입력
-	//scanf <- sdl 검사를 해제 안하면 에러
-	//scanf_s("변수의 서식", &변수)
-	int count = 0;
+#pragma region 홀수짝수
+	/*
+	int number = 0;
 	printf("입력:");
-	//scanf_s("%d",&count);// 표준 입력 함수는 입력을 수행할 때까지 다음 작업으로 넘어갈 수 없다.
-	//printf("count: %d\n", count);
-	printf("\n");
+	scanf_s("%d", &number);
+	if (number % 2)
+		printf("홀수\n");
+	else
+		printf("짝수\n");
+	*/
 #pragma endregion
-	//입력값에 따라 별 계단 찍기★
-	while (1)
-	{
-		scanf_s("%d", &count);
 
-		for (int i = 1; i <= count; i++)
-		{
-			for (int j = 1; j <= i; j++)
-				printf("★");
+#pragma region 네이밍 컨벤션
+	// camel case
+	// 첫 단어를 제외하고 첫 글자를 대문자로 표기
+	// ex) playerHealth
+	// 
+	// pascal case
+	// 단어의 첫 글자를 대문자로 표기
+	// ex) SelectTarget
+	// 
+	// snake case
+	// 전부 소문자 단어 사이에 _ 표기
+	// ex) api_url
+	//
+#pragma endregion
 
-			printf("\n");
-		}
 
-		if (!count)
-			break;
-	}
 
 }			
 			
