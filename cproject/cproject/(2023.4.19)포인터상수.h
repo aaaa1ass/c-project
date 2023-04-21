@@ -28,15 +28,15 @@ void main()
 #pragma region sizeof()
 	float health = 100;
 	int* pointer;
-	printf("char 农扁: %d\n", sizeof(char));
-	printf("short 农扁: %d\n", sizeof(short));
-	printf("int 农扁: %d\n", sizeof(int));
-	printf("long 农扁: %d\n", sizeof(long));
-	printf("float 农扁: %d\n", sizeof(health));
-	printf("double 农扁: %d\n", sizeof(double));
-	printf("long double 农扁: %d\n", sizeof(long double));
-	printf("pointer 农扁: %d\n", sizeof(pointer));
-	printf("\n");
+	//printf("char 农扁: %d\n", sizeof(char));
+	//printf("short 农扁: %d\n", sizeof(short));
+	//printf("int 农扁: %d\n", sizeof(int));
+	//printf("long 农扁: %d\n", sizeof(long));
+	//printf("float 农扁: %d\n", sizeof(health));
+	//printf("double 农扁: %d\n", sizeof(double));
+	//printf("long double 农扁: %d\n", sizeof(long double));
+	//printf("pointer 农扁: %d\n", sizeof(pointer));
+	//printf("\n");
 #pragma endregion
 
 #pragma region 备备窜
