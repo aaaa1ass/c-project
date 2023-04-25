@@ -2,27 +2,7 @@
 #include <stdio.h>
 void main()
 {
-#pragma region while
-	//특정 조건이 거짓이 될 때까지 반복
-	int count = 5;
-	while (0)//조건
-	{
-		printf("게임 실행 %d\n", count);
-		count--;
-	}
-#pragma endregion
 
-#pragma region continue
-	//해당 조건문만 실행하지 않고 반복문을 이어서 실행하는 제어문
-	for (int i = 1; i <= 0; i++)
-	{
-		if (i == 3)
-		{
-			continue;
-		}
-		printf("%d ", i);
-	}
-#pragma endregion
 
 #pragma region 형 변환
 	//다른 자료형의 변수끼리 연산이 이루어질 때 변환

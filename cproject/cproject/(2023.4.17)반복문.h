@@ -81,4 +81,35 @@ void main()
 	}
 #pragma endregion
 
+#pragma region while
+	//특정 조건이 거짓이 될 때까지 반복
+	int count = 5;
+	while (0)//조건
+	{
+		printf("게임 실행 %d\n", count);
+		count--;
+	}
+#pragma endregion
+
+#pragma region continue
+	//해당 조건문만 실행하지 않고 반복문을 이어서 실행하는 제어문
+	for (int i = 1; i <= 0; i++)
+	{
+		if (i == 3)
+		{
+			continue;
+		}
+		printf("%d ", i);
+	}
+#pragma endregion
+
+#pragma region do-while
+	//조건과 상관없이 한 번 작업을 수행한 다음 조건에 따라 명령문을 실행
+	int count = 3;
+	do
+	{
+		//printf("로그인 시도\n");
+		count--;
+	} while (count > 0);
+#pragma endregion
 }
