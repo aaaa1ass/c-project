@@ -78,6 +78,25 @@ void main()
 	}
 #pragma endregion
 
+#pragma region switch
+	int count = 3;
+
+	//switch: 어떤 결과에 따라 그 결과부터 실행되는 명령문
+	// 조건에 해당하는 값에 따라 조건의 위치로 이동
+	switch (count)// <- 값
+	{
+		//break: 특정 지점에서 분기를 탈출하는 제어문
+	case 0: printf("count is 0.\n");
+		break;
+	case 1: printf("count is 1.\n");
+		break;
+	case 2: printf("count is 2.\n");
+		break;
+		//default:printf("예외\n");
+
+	}
+#pragma endregion
+
 #pragma region 논리 연산자
 	// && AND
 	if ('A' == 'A' && 'A' <= 'A')

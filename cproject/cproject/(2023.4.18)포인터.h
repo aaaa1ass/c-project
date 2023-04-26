@@ -64,4 +64,21 @@ void main()
 	printf("ptr1가 가리키는 값: %lf\n", *ptr1);
 
 #pragma endregion		
+
+#pragma region 범용 포인터
+	//자료형이 정해지지 않은 상태로 모든 자료형을 저장할 수 있는 포인터
+	//메모리 주소에 접근해서 값을 변경할 수 없다
+	//형 변환을 해서 접근할 수 있다
+	char charData = 'A';
+	int intData = 10;
+	float floatData = 19.4f;
+	void* Ptr = NULL;
+	Ptr = &charData;
+	*(char*)Ptr = 'B';
+	printf("Ptr이 가리키는 값: %c\n", *(char*)Ptr);
+	Ptr = &intData;
+	*(int*)Ptr = 99;
+	printf("Ptr이 가리키는 값: %d\n", *(int*)Ptr);
+#pragma endregion
+
 }

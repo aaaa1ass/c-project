@@ -1,67 +1,95 @@
 #include <stdio.h>
 #include <limits.h>
-#include "SoundManager.h"
-//스택 -> LIFO 구조 last in first out
-#pragma region 재귀함수
-//어떤 함수에서 자신을 다시 호출하여 작업을 수행하는 함수
-void Recursion(int x)
+
+#pragma region 전역변수
+//함수 외부에서 선언된 변수로 프로그램 어디서든 접근 가능하며 프로그램이 종료되어야만 메모리에서 삭제된다
+int globalValue = 5;
+#pragma endregion
+
+#pragma region 정적변수
+//지역 변수와 전역 변수의 특징을 가지고 한 번만 초기화가 이루어진다
+static int attack;//초기화가 이루어지지 않은 전역,정적 변수는 프로그램 크기에 포함되지 않는다.
+void Calculator()
 {
-	if (x == 1)
+	static int value = 1;
+	value += 1;
+	printf("정적 변수 value: %d\n", value);
+	
+}
+#pragma endregion
+
+void Function()
+{
+	
+	int count = 0;
+	globalValue += 1;
+	count += 1; 
+	//printf("count: %d\n", count);
+	//printf("globalValue: %d\n", globalValue);
+}
+
+void function(int x)
+{
+	
+	printf("%d",x);
+	for (int i = 2; i <= x; i++)
 	{
-		//재귀 함수를 계속 호출하면
-		//스택 오버플로우가 발생한다
-		// return: 값 반환, 함수 반환
-		return;
+	return function(x / i);
 	}
-	printf("Recursion() 함수 호출\n");
-	Recursion(x - 1);
 }
-#pragma endregion
-
-#pragma region 팩토리얼
-int Factorial(int x)
-{
-	if (x == 0)
-		return 1;
-	return x * Factorial(x - 1);
-}
-
-#pragma endregion
-
-#pragma region 인라인함수
-//함수를 호출하는 대신 호출되는 위치마다 함수의 코드를 복사하여 전달하는 방식의 함수
-inline void Function()
-{
-	//함수 호출 과정이 없어 처리 속도가 빠르지만, 남용하면 실행 파일의 크기가 커진다
-	//오버헤드: 동떨어진 위치의 메모리에 액세스할 때 추가적인 시간,메모리,자원이 든다
-	printf("Function() 호출\n");
-}
-#pragma endregion
-
-
-
 
 void main()
 {
-	//재귀함수
-	//Recursion(3);
+#pragma region 지역변수
+	//'블록' 내에서 선언된 변수로 블록 내에서만 유효하고 블록 종료 시 메모리에서 삭제된다
+	// A
+	int data = 100;// main 함수 안의 data
+	{
+		//B
+		int data = 20;// 블록 내의 data
+		//printf("data in B: %d\n", data);
+	}// 블록 내의 data 메모리 해제
+	//printf("data in A: %d\n", data);
+	
+#pragma endregion
+	//Function();
+	//Function();
+	//Calculator();
+	//Calculator();
 
-	//팩토리얼
+	//printf("정적 변수 attack: %d\n", attack);
+
+	//메모리 
+	// 
+	// 코드 함수의 주소, 리터럴
+	// 데이터 전역 변수, 정적 변수
+	// BSS 전역 변수, 정적 변수
+	// 힙 직접 메모리 해제
+	// 스택 지역 변수 매개 변수
+	//
+
+#pragma region 약수
 	int number = 0;
 	//printf("입력: ");
 	//scanf_s("%d", &number);
-	//printf("!%d = %d\n", number, Factorial(number));
-	int f = 1;
-	for (int i = 1; i <= number; i++)
+	for(int i = 1;i <= number;i++)
 	{
-		f *= i;
+		if (number % i == 0)
+		{
+			printf("%d\n", i);
+		}
 	}
-	//printf("!%d = %d\n", number, f);
-	
-	//인라인 함수
-	//Function();
+#pragma endregion
 
+#pragma region ShortCircuit
+	// 논리 연산에서 두 피연산자 중 어느 한 쪽만 '참'이면 우측의 피연산자의 값을 평가하지 않고 바로 결과를 얻는 행위
+	// && || 논리 연산자
+	// & | 비트 연산자
+	int x = 0;
+	int y = 1;
+	if(x == -1 && ++y == 2){}
+	printf("x: %d, y: %d\n", x,y);
+#pragma endregion
 
-	Sound();
 }			
 			
