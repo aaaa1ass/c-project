@@ -1,94 +1,70 @@
 #include <stdio.h>
 #include <limits.h>
-
-#pragma region 전역변수
-//함수 외부에서 선언된 변수로 프로그램 어디서든 접근 가능하며 프로그램이 종료되어야만 메모리에서 삭제된다
-int globalValue = 5;
-#pragma endregion
-
-#pragma region 정적변수
-//지역 변수와 전역 변수의 특징을 가지고 한 번만 초기화가 이루어진다
-static int attack;//초기화가 이루어지지 않은 전역,정적 변수는 프로그램 크기에 포함되지 않는다.
-void Calculator()
-{
-	static int value = 1;
-	value += 1;
-	printf("정적 변수 value: %d\n", value);
-	
-}
-#pragma endregion
-
-void Function()
-{
-	
-	int count = 0;
-	globalValue += 1;
-	count += 1; 
-	//printf("count: %d\n", count);
-	//printf("globalValue: %d\n", globalValue);
-}
-
-void function(int x)
-{
-	
-	printf("%d",x);
-	for (int i = 2; i <= x; i++)
-	{
-	return function(x / i);
-	}
-}
+#include <malloc.h>
 
 void main()
 {
-#pragma region 지역변수
-	//'블록' 내에서 선언된 변수로 블록 내에서만 유효하고 블록 종료 시 메모리에서 삭제된다
-	// A
-	int data = 100;// main 함수 안의 data
-	{
-		//B
-		int data = 20;// 블록 내의 data
-		//printf("data in B: %d\n", data);
-	}// 블록 내의 data 메모리 해제
-	//printf("data in A: %d\n", data);
+#pragma region 동적할당
+	//프로그램을 실행 중에 필요한 만큼 메모리를 할당하는 작업
 	
+	// 실행 시간에 메모리의 크기를 변경시킬 수 있으며 동적으로 메모리를 할당할 때 바이트 단위다
+	//int* ptr = (int *)malloc(sizeof(int));
+
+	// 메모리 동적 할당 시 주소를 범용 포인터로 반환하기에, 자료형 반환 후 다음 메모리에 할당해야 한다
+	//*ptr = 666;
+	//printf("동적 할당한 메모리 안의 값: %d\n", *ptr);
+
+	//메모리 해제
+	//free(ptr);
+	
+	//해제된 메모리를 해제할 수 없다
+	//free(ptr);
 #pragma endregion
-	//Function();
-	//Function();
-	//Calculator();
-	//Calculator();
 
-	//printf("정적 변수 attack: %d\n", attack);
+#pragma region ASCII코드
+	//영문 알파벳을 사용하는 대표적인 문자 인코딩
 
-	//메모리 
-	// 
-	// 코드 함수의 주소, 리터럴
-	// 데이터 전역 변수, 정적 변수
-	// BSS 전역 변수, 정적 변수
-	// 힙 직접 메모리 해제
-	// 스택 지역 변수 매개 변수
-	//
+	//char alphabet = 65;
 
-#pragma region 약수
-	int number = 0;
-	//printf("입력: ");
-	//scanf_s("%d", &number);
-	for(int i = 1;i <= number;i++)
+	//printf("ASCII 코드 정수 값: %d\n", alphabet);
+	//printf("ASCII 코드 문자 값: %c\n", alphabet);
+
+	// 알파벳 출력
+	for (char i = 'a'; i <= 'z'; i++)
 	{
-		if (number % i == 0)
-		{
-			printf("%d\n", i);
-		}
+		//printf("%c\n", i);
 	}
 #pragma endregion
 
-#pragma region ShortCircuit
-	// 논리 연산에서 두 피연산자 중 어느 한 쪽만 '참'이면 우측의 피연산자의 값을 평가하지 않고 바로 결과를 얻는 행위
-	// && || 논리 연산자
-	// & | 비트 연산자
-	int x = 0;
-	int y = 1;
-	if(x == -1 && ++y == 2){}
-	printf("x: %d, y: %d\n", x,y);
+#pragma region 허상포인터댕글링포인터
+	//이미 해제된 메모리 영역을 가리키는 포인터
+	//int* intPtr = (int*)malloc(sizeof(int));
+	//*intPtr = 666;
+	////printf("%d\n", *intPtr);
+	//free(intPtr);
+	//intPtr = NULL;
+
+	//*intPtr = 2;
+	// 
+	//printf("%d\n", *intPtr);
+#pragma endregion
+
+#pragma region 이중포인터
+	int a = 100; 
+	int* aPtr;
+	int** daPtr;
+	aPtr = &a;
+	daPtr = &aPtr;
+	printf("**dptr의 값: %d\n", **daPtr);
+	int b = 200;
+	int* bPtr = &b;
+	int** dbPtr = &bPtr;
+
+	int temp = **daPtr;
+	**daPtr = **dbPtr;
+	**dbPtr = temp;
+
+	printf("a: %d, b: %d\n", a, b);
 #pragma endregion
 
 }			
