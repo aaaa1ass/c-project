@@ -1,2 +1,5 @@
 ﻿  ccc.c
+C:\Users\Administrator\Documents\기밀문서\cproject\cproject\ccc.c(55,15): warning C4101: 'model': unreferenced local variable
+C:\Users\Administrator\Documents\기밀문서\cproject\cproject\ccc.c(51,16): warning C4101: 'otherPlayer': unreferenced local variable
+C:\Users\Administrator\Documents\기밀문서\cproject\cproject\ccc.c(31,16): warning C4101: 'player': unreferenced local variable
   cproject.vcxproj -> C:\Users\Administrator\Documents\기밀문서\cproject\x64\Debug\cproject.exe

@@ -2,70 +2,82 @@
 #include <limits.h>
 #include <malloc.h>
 
+#pragma region 구조체
+//여러 개의 변수를 하나의 집합으로 구조화한 다음 하나의 객체를 생성하는 것
+struct Player
+{
+	int attack;
+	float health;
+	char grade;
+	// <- 메모리가 잡히지 않은 설계도 상태
+	//구조체를 선언하기 전에 구조체는 메모리 공간이 생성되지 않으므로 구조체 내부 데이터를 초기화할 수 없다
+};
+
+struct Model
+{
+	int weight;
+	short mesh;
+	double size;
+	//구조체의 크기는 멤버 변수의 순서에 따라 다르게 설정될 수 있으며 구조체 크기를 결정하는 형태는 기본 자료형으로만 구성된다
+};
+#pragma endregion
+
+
+
 void main()
 {
-#pragma region 동적할당
-	//프로그램을 실행 중에 필요한 만큼 메모리를 할당하는 작업
+#pragma region 구조체
+	//구조체 선언
+	struct Player player;
 	
-	// 실행 시간에 메모리의 크기를 변경시킬 수 있으며 동적으로 메모리를 할당할 때 바이트 단위다
-	//int* ptr = (int *)malloc(sizeof(int));
+	//player.attack = 10;
+	//player.grade = 'A';
+	//player.health = 92.15f;
+	//
+	//printf("player.attack: %d\n", player.attack);
+	//printf("player.grade: %c\n", player.grade);
+	//printf("player.health: %f\n", player.health);
 
-	// 메모리 동적 할당 시 주소를 범용 포인터로 반환하기에, 자료형 반환 후 다음 메모리에 할당해야 한다
-	//*ptr = 666;
-	//printf("동적 할당한 메모리 안의 값: %d\n", *ptr);
-
-	//메모리 해제
-	//free(ptr);
-	
-	//해제된 메모리를 해제할 수 없다
-	//free(ptr);
+	//구조체 초기화
+	//초기화 리스트로 초기화할 때 구조체에서 선언된 변수 순서를 맞춰야 한다
+	struct Player newPlayer = { 15, 99.5f, 'B' };
+	//printf("newPlayer.attack: %d\n", newPlayer.attack);
+	//printf("newPlayer.grade: %c\n", newPlayer.grade);
+	//printf("newPlayer.health: %f\n", newPlayer.health);
 #pragma endregion
 
-#pragma region ASCII코드
-	//영문 알파벳을 사용하는 대표적인 문자 인코딩
+#pragma region 바이트패딩
+	//멤버 변수를 메모리에서 cpu로 읽을 때 한 번에 읽을 수 있도록 컴파일러가 레지스터의 블록에 맞춰 바이트를 패딩해주는 작업
+	struct Player otherPlayer;
+	//구조체의 크기는 구조체를 구성하는 멤버 중 가장 큰 크기의 메모리의 배수가 된다
+	//printf("Player의 크기: %d\n", sizeof(otherPlayer));
 
-	//char alphabet = 65;
-
-	//printf("ASCII 코드 정수 값: %d\n", alphabet);
-	//printf("ASCII 코드 문자 값: %c\n", alphabet);
-
-	// 알파벳 출력
-	for (char i = 'a'; i <= 'z'; i++)
-	{
-		//printf("%c\n", i);
-	}
+	struct Model model;
+	//printf("model의 크기: %d\n", sizeof(model));
 #pragma endregion
 
-#pragma region 허상포인터댕글링포인터
-	//이미 해제된 메모리 영역을 가리키는 포인터
-	//int* intPtr = (int*)malloc(sizeof(int));
-	//*intPtr = 666;
-	////printf("%d\n", *intPtr);
-	//free(intPtr);
-	//intPtr = NULL;
-
-	//*intPtr = 2;
-	// 
-	//printf("%d\n", *intPtr);
+#pragma region 소수
+	//int number = 0;
+	//int count = 0;
+	//printf("입력: ");
+	//scanf_s("%d", &number);
+	//printf("%d 이하의 소수: ",number);
+	//for (int i = 2; i <= number; i++)
+	//{
+	//	count = 0;
+	//	for (int j = 2; j < i; j++)
+	//	{
+	//		if (i % j == 0)
+	//		{
+	//			count++;
+	//			break;
+	//		}
+	//	}
+	//	if (!count)
+	//		printf("%d ", i);
+	//}
 #pragma endregion
 
-#pragma region 이중포인터
-	int a = 100; 
-	int* aPtr;
-	int** daPtr;
-	aPtr = &a;
-	daPtr = &aPtr;
-	printf("**dptr의 값: %d\n", **daPtr);
-	int b = 200;
-	int* bPtr = &b;
-	int** dbPtr = &bPtr;
-
-	int temp = **daPtr;
-	**daPtr = **dbPtr;
-	**dbPtr = temp;
-
-	printf("a: %d, b: %d\n", a, b);
-#pragma endregion
 
 }			
 			
