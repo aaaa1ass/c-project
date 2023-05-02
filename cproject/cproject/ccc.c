@@ -2,82 +2,65 @@
 #include <limits.h>
 #include <malloc.h>
 
-#pragma region 구조체
-//여러 개의 변수를 하나의 집합으로 구조화한 다음 하나의 객체를 생성하는 것
-struct Player
+int main()
 {
-	int attack;
-	float health;
-	char grade;
-	// <- 메모리가 잡히지 않은 설계도 상태
-	//구조체를 선언하기 전에 구조체는 메모리 공간이 생성되지 않으므로 구조체 내부 데이터를 초기화할 수 없다
-};
+#pragma region 포인터배열
+	const char* string[3];
+	//[] [] [] 8 byte 메모리 3공간 
+	string[0] = "First";
+	string[1] = "Second";
+	string[2] = "Third";
 
-struct Model
-{
-	int weight;
-	short mesh;
-	double size;
-	//구조체의 크기는 멤버 변수의 순서에 따라 다르게 설정될 수 있으며 구조체 크기를 결정하는 형태는 기본 자료형으로만 구성된다
-};
+	for (int i = 0; i < 3; i++)
+	{
+		//printf("string[%d]: %s\n", i, string[i]);
+	}
+	int a = 10;
+	int b = 20;
+	int c = 30;
+	int* ptr1 = &a;
+	int* ptr2 = &b;
+	int* ptr3 = &c;
+	int* ptr_arr[3] = {ptr1, ptr2, ptr3};
+	//printf("ptr_arr[0]의 값: %p\n", ptr_arr[0]);
+	//printf("ptr_arr[0]가 가리키는 값: %d\n", *ptr_arr[0]);
 #pragma endregion
 
+#pragma region unsigned
+	//부호가 없는 자료형으로 부호비트가 없고 자료를 저장할 수 있는 데이터 영역이 2배 늘어난다
 
+	char data = 128;
+	unsigned char uData = 128;
 
-void main()
-{
-#pragma region 구조체
-	//구조체 선언
-	struct Player player;
+	//signed 자료형은 암묵적 형변환이 진행될 때 늘어나는 메모리 값은 1(부호비트)로 채워진다
+	//printf("data: %u\n", data);
+	//printf("data: %d\n", data);
+
+	//%u: unsigned int형 값을 표현하는 서식 지정자
+	//둘 다 부호가 없는 표현이므로 암묵적 형변환이 진행될 때 늘어나는 메모리 값은 0으로 채워진다
+	//printf("uData: %u\n", uData);
+	//printf("uData: %d\n", uData);
 	
-	//player.attack = 10;
-	//player.grade = 'A';
-	//player.health = 92.15f;
-	//
-	//printf("player.attack: %d\n", player.attack);
-	//printf("player.grade: %c\n", player.grade);
-	//printf("player.health: %f\n", player.health);
-
-	//구조체 초기화
-	//초기화 리스트로 초기화할 때 구조체에서 선언된 변수 순서를 맞춰야 한다
-	struct Player newPlayer = { 15, 99.5f, 'B' };
-	//printf("newPlayer.attack: %d\n", newPlayer.attack);
-	//printf("newPlayer.grade: %c\n", newPlayer.grade);
-	//printf("newPlayer.health: %f\n", newPlayer.health);
 #pragma endregion
 
-#pragma region 바이트패딩
-	//멤버 변수를 메모리에서 cpu로 읽을 때 한 번에 읽을 수 있도록 컴파일러가 레지스터의 블록에 맞춰 바이트를 패딩해주는 작업
-	struct Player otherPlayer;
-	//구조체의 크기는 구조체를 구성하는 멤버 중 가장 큰 크기의 메모리의 배수가 된다
-	//printf("Player의 크기: %d\n", sizeof(otherPlayer));
-
-	struct Model model;
-	//printf("model의 크기: %d\n", sizeof(model));
+#pragma region 공약수
+	// 두 개의 정수형 변수 선언
+	int x;
+	int y;
+	// 입력
+	printf("x: ");
+	scanf_s("%d", &x);
+	printf("y: ");
+	scanf_s("%d", &y);
+	for (int i = 1; i <= x && i <= y; i++)
+	{
+		if (x % i == 0 && y % i == 0)
+			printf("%d ", i);
+	}
 #pragma endregion
 
-#pragma region 소수
-	//int number = 0;
-	//int count = 0;
-	//printf("입력: ");
-	//scanf_s("%d", &number);
-	//printf("%d 이하의 소수: ",number);
-	//for (int i = 2; i <= number; i++)
-	//{
-	//	count = 0;
-	//	for (int j = 2; j < i; j++)
-	//	{
-	//		if (i % j == 0)
-	//		{
-	//			count++;
-	//			break;
-	//		}
-	//	}
-	//	if (!count)
-	//		printf("%d ", i);
-	//}
-#pragma endregion
-
-
+	// 성공적으로 종료했을 경우 0
+	// 아니면 1
+	return 0;
 }			
 			

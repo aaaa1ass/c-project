@@ -26,7 +26,6 @@ int Factorial(int x)
 		return 1;
 	return x * Factorial(x - 1);
 }
-
 #pragma endregion
 
 #pragma region 인라인함수
