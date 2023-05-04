@@ -1,87 +1,83 @@
 #include <stdio.h>
 #include <limits.h>
 #include <malloc.h>
+#include <math.h>
 
-//enum 선언
-enum Color
-{//열거형은 초깃값을 설정할 수 있으며, 그 다음 상수값은 1씩 증가한다
-	BLACK = -10,
-	RED = 0,
-	BLUE
+struct Player
+{
+	int hp;
+	float attack;
+	int x;
+	int y;
 };
 
-enum State
+struct Enemy
 {
-	IDLE,
-	ATTACK,
-	DIE
+	int x;
+	int y;
 };
 
 int main()
 {
-#pragma region _2차원배열
-	//배열의 요소로 또다른 배열을 가지는 배열
-
-	//배열은 행렬로 구분된다
-	//int array2D[4][3] =
-	//{
-	//	{10,20,30},
-	//	{40,50,60},
-	//	{70,80,90},
-	//	{100,110,120}
-	//};
-	//printf("array2D의 주소: %p\n", array2D);
-	//printf("array2D[0][0]의 주소: %p\n", &array2D[0][0]);
-
-	//int* ptr = NULL;
-	
-	//배열 포인터
-	//특정 사이즈의 배열만 가리킬 수 있는 하나의 포인터
-	//int(* arrayPtr)[3];// 4byte x 3 총 12byte
+#pragma region 구조체 포인터
+	//struct Player player;
+	//struct Player* ptrPlayer = NULL;
+	//ptrPlayer = &player;
 	//
-	//ptr = array2D;
-	//arrayPtr = array2D;
+	//(*ptrPlayer).hp = 100;
+	//(*ptrPlayer).attack = 12.5f;
 	//
-	//ptr = ptr + 3;
-	//arrayPtr = arrayPtr + 1;
+	//printf("%d\n", (*ptrPlayer).hp);
+	//printf("%f\n", (*ptrPlayer).attack);
 	//
-	//printf("ptr이 가리키는 값: %d\n", *ptr);
-	//printf("arrayPtr이 가리키는 값: %d\n", (*arrayPtr)[0]);
+	//ptrPlayer->hp = 250;
+	//ptrPlayer->attack = 26.125f;
+	//
+	//printf("%d\n", (*ptrPlayer).hp);
+	//printf("%f\n", (*ptrPlayer).attack);
 #pragma endregion
 
-#pragma region 열거형enum
-	//요소, 멤버로 불리는 값의 집합을 이루는 자료형
-	//enum Color color;
-	//
-	//color = BLACK;
-	//
-	//printf("color의 값: %d\n", color);
-	//
-	//color = RED;
-	//
-	//printf("color의 값: %d\n", color);
+#pragma region 두 점 사이의 거리
+	//제곱근 sqrt
+	//printf("루트 49: %lf\n", sqrt(49));
+	////거듭제곱
+	//printf("2의 3승: %lf\n", pow(2, 3));
+	//struct Player player;
+	//struct Enemy enemy;
+	//player.x = 0;
+	//player.y = 0;
+	//enemy.x = 5;
+	//enemy.y = 7;
+	//double distance = sqrt(pow(player.x - enemy.x, 2) + pow(player.y - enemy.y,2));
+	//printf("distance is %lf\n", distance);
+	//if (distance < 100)
+	//	printf("Safe.\n");
+#pragma endregion
 
-	//enum State state;
-	//int select = 0;
-	//printf("플레이어의 상태를 설정: ");
-	//scanf_s("%d",&select);
+#pragma region 실수 저장 방법
+	//고정소수점 소수점 위치 고정하고 소수점 위치 나타내기
+
+	//float 4 byte
+	//부동소수점
+	//소수점의 위치를 고정하지 않고 소수점의 위치를 나타내는 방법
+	//float fData = 1.3f;
+	//printf("fData의 값: %.7f\n", fData);
 	//
+	////double 8 byte
+	//double dData = 1.3;
+	//printf("dData의 값: %.10lf\n", dData);
 	//
-	//state = select;
-	//switch (state)
+	//if (fData == 1.3)
 	//{
-	//case IDLE:printf("대기 상태");
-	//	break;
-	//case ATTACK:printf("공격 상태");
-	//	break;
-	//case DIE:printf("죽음 상태");
-	//	break;
+	//	printf("fData의 값과 1.3의 값이 같음\n");
+	//}
+	//else
+	//{
+	//	printf("fData의 값과 1.3의 값이 다름\n");
 	//}
 #pragma endregion
 
-	int A, B;
-	scanf_s("%d %d", &A, &B);
-	printf("%d", A + B);
+
 	return 0;
 }			
 			
