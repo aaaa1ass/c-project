@@ -1,82 +1,85 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <limits.h>
 #include <malloc.h>
 #include <math.h>
+#include <string.h>
 
-struct Player
+void Function()
 {
-	int hp;
-	float attack;
+	printf("Function() 함수\n");
+}
+
+int Damage(int x)
+{
+	return x;
+}
+
+void Sort(void (*fptr)())
+{
+	fptr();
+}
+
+void DataList()
+{
+	printf("DataList() 함수\n");
+}
+
+#pragma region typedef
+typedef unsigned int UINT;
+
+typedef struct Player
+{
 	int x;
 	int y;
-};
+	//2 바이트패딩
+	char c[10];
+}Player;
+#pragma endregion
 
-struct Enemy
-{
-	int x;
-	int y;
-};
 
 int main()
 {
-#pragma region 구조체 포인터
-	//struct Player player;
-	//struct Player* ptrPlayer = NULL;
-	//ptrPlayer = &player;
-	//
-	//(*ptrPlayer).hp = 100;
-	//(*ptrPlayer).attack = 12.5f;
-	//
-	//printf("%d\n", (*ptrPlayer).hp);
-	//printf("%f\n", (*ptrPlayer).attack);
-	//
-	//ptrPlayer->hp = 250;
-	//ptrPlayer->attack = 26.125f;
-	//
-	//printf("%d\n", (*ptrPlayer).hp);
-	//printf("%f\n", (*ptrPlayer).attack);
+#pragma region 함수 포인터
+	// // 함수의 주솟값을 저장하고 가리킬 수 있는 변수
+	// 
+	// // 함수의 이름은 함수의 주소를 의미
+	// //printf("Function()의 주솟값: %p\n", Function);
+	// 
+	// // 함수 포인터 선언
+	// void (*fptr) ();
+	// int (*ffptr) (int);
+	// fptr = Function;
+	// ffptr = Damage;
+	// fptr();
+	// printf("ffptr: %d\n", ffptr(10));
+	// 
+	// fptr = DataList;
+	// fptr();
+	// 
+	// Sort(Function);
+	// //함수 포인터는 함수의 반환형과 매개변수가 일치해야 한다
+	// //fptr = Damage;
+	// //printf("fptr: %d\n",fptr(10)); 에러
 #pragma endregion
 
-#pragma region 두 점 사이의 거리
-	//제곱근 sqrt
-	//printf("루트 49: %lf\n", sqrt(49));
-	////거듭제곱
-	//printf("2의 3승: %lf\n", pow(2, 3));
-	//struct Player player;
-	//struct Enemy enemy;
-	//player.x = 0;
-	//player.y = 0;
-	//enemy.x = 5;
-	//enemy.y = 7;
-	//double distance = sqrt(pow(player.x - enemy.x, 2) + pow(player.y - enemy.y,2));
-	//printf("distance is %lf\n", distance);
-	//if (distance < 100)
-	//	printf("Safe.\n");
+#pragma region typedef
+	// UINT count = 100;
+	// printf("count: %d\n", count);
+	// Player player;
+	// player.x = 10;
+	// player.y = 20;
+	// 
+	// // 안됨
+	// //player.c = "Alistar";
+	// 
+	// //(복사받을 문자 배열, 복사할 문자 배열)
+	// strcpy(player.c,"Alistar");
+	// 
+	// printf("player.x: %d\n", player.x);
+	// printf("player.c: %s\n", player.c);
+	// printf("player의 메모리: %u\n", sizeof(player));
 #pragma endregion
-
-#pragma region 실수 저장 방법
-	//고정소수점 소수점 위치 고정하고 소수점 위치 나타내기
-
-	//float 4 byte
-	//부동소수점
-	//소수점의 위치를 고정하지 않고 소수점의 위치를 나타내는 방법
-	//float fData = 1.3f;
-	//printf("fData의 값: %.7f\n", fData);
-	//
-	////double 8 byte
-	//double dData = 1.3;
-	//printf("dData의 값: %.10lf\n", dData);
-	//
-	//if (fData == 1.3)
-	//{
-	//	printf("fData의 값과 1.3의 값이 같음\n");
-	//}
-	//else
-	//{
-	//	printf("fData의 값과 1.3의 값이 다름\n");
-	//}
-#pragma endregion
-
 
 	return 0;
 }			
