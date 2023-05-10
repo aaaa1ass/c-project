@@ -5,81 +5,56 @@
 #include <math.h>
 #include <string.h>
 
-void Function()
-{
-	printf("Function() 함수\n");
-}
-
-int Damage(int x)
-{
-	return x;
-}
-
-void Sort(void (*fptr)())
-{
-	fptr();
-}
-
-void DataList()
-{
-	printf("DataList() 함수\n");
-}
-
-#pragma region typedef
-typedef unsigned int UINT;
-
-typedef struct Player
-{
-	int x;
-	int y;
-	//2 바이트패딩
-	char c[10];
-}Player;
-#pragma endregion
-
+typedef struct Node {
+	int data;
+	struct Node * next;
+}Node;
 
 int main()
 {
-#pragma region 함수 포인터
-	// // 함수의 주솟값을 저장하고 가리킬 수 있는 변수
+#pragma region 자기 참조 구조체
+	//자기 자신을 가리키는 포인터가 구조체의 멤버로 들어가 있는 구조체 
 	// 
-	// // 함수의 이름은 함수의 주소를 의미
-	// //printf("Function()의 주솟값: %p\n", Function);
-	// 
-	// // 함수 포인터 선언
-	// void (*fptr) ();
-	// int (*ffptr) (int);
-	// fptr = Function;
-	// ffptr = Damage;
-	// fptr();
-	// printf("ffptr: %d\n", ffptr(10));
-	// 
-	// fptr = DataList;
-	// fptr();
-	// 
-	// Sort(Function);
-	// //함수 포인터는 함수의 반환형과 매개변수가 일치해야 한다
-	// //fptr = Damage;
-	// //printf("fptr: %d\n",fptr(10)); 에러
+	//Node node1;
+	//node1.data = 100;
+	//
+	//Node node2;
+	//node2.data = 200;
+	//
+	//Node node3;
+	//node3.data = 300;
+	//
+	//printf("node1의 data: %d\n", node1.data);
+	//printf("node2의 data: %d\n", node2.data);
+	//printf("node3의 data: %d\n", node3.data);
+	//
+	//node1.next = &node2;
+	//node2.next = &node3;
+	//node3.next = NULL;
+	//
+	//node1.next->data = 999;
+	//
+	//Node* currentPtr = &node1;
+	//while (currentPtr)
+	//{
+	//	printf("data: %d\n", currentPtr->data);
+	//	currentPtr = currentPtr->next;
+	//}
+#pragma endregion
+	
+#pragma region 삼항 연산자
+	//int data = 0;
+	////        조건 ? 참 : 거짓
+	//data = 10 != 10 ? 100 : 445;
+	//printf("data: %d\n", data);
 #pragma endregion
 
-#pragma region typedef
-	// UINT count = 100;
-	// printf("count: %d\n", count);
-	// Player player;
-	// player.x = 10;
-	// player.y = 20;
-	// 
-	// // 안됨
-	// //player.c = "Alistar";
-	// 
-	// //(복사받을 문자 배열, 복사할 문자 배열)
-	// strcpy(player.c,"Alistar");
-	// 
-	// printf("player.x: %d\n", player.x);
-	// printf("player.c: %s\n", player.c);
-	// printf("player의 메모리: %u\n", sizeof(player));
-#pragma endregion
+	char string[10];
+
+	scanf("%[^\n]s", string);
+
+	printf("string: %s\n", string);
+
 
 	return 0;
 }			
