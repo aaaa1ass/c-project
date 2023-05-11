@@ -4,56 +4,72 @@
 #include <malloc.h>
 #include <math.h>
 #include <string.h>
+#include <stdarg.h>
 
-typedef struct Node {
-	int data;
-	struct Node * next;
-}Node;
+void Array(int array[],int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		array[i] = 100 * i;
+	}
+}
+
+void ChangeString(char str[])
+{
+	for (int i = 0; str[i] != NULL; i++)
+	{
+		printf("%c",str[i] -= 32);
+	}
+	
+}
+
+void Information(int size, ...)
+{
+	//va_list 각 가변 인자의 시작 주소를 가리키는 포인터
+	va_list argPtr;
+
+	//va_start va_list로 만들어진 포인터에게 가변 인자 중 첫 번째 인자의 주소를 가르쳐주는 매크로
+	va_start(argPtr, size);
+
+	int result = 0;
+
+	for (int i = 0; i < size; i++)
+	{
+		//va_arg 특정 가변 인자를 가리키고 있는 va_list의 포인터를 다음 가변 인자로 이동시켜주는 매크로
+		result += va_arg(argPtr, int);
+	}
+	printf("result: %d\n", result);
+	
+	va_end(argPtr);
+}
 
 int main()
 {
-#pragma region 자기 참조 구조체
-	//자기 자신을 가리키는 포인터가 구조체의 멤버로 들어가 있는 구조체 
+#pragma region 매개변수 배열
+	// int dataList[5] = { 1,2,3,4,5 };
 	// 
-	//Node node1;
-	//node1.data = 100;
-	//
-	//Node node2;
-	//node2.data = 200;
-	//
-	//Node node3;
-	//node3.data = 300;
-	//
-	//printf("node1의 data: %d\n", node1.data);
-	//printf("node2의 data: %d\n", node2.data);
-	//printf("node3의 data: %d\n", node3.data);
-	//
-	//node1.next = &node2;
-	//node2.next = &node3;
-	//node3.next = NULL;
-	//
-	//node1.next->data = 999;
-	//
-	//Node* currentPtr = &node1;
-	//while (currentPtr)
-	//{
-	//	printf("data: %d\n", currentPtr->data);
-	//	currentPtr = currentPtr->next;
-	//}
-#pragma endregion
+	// Array(dataList, 5);
+	// 
+	// for (int i = 0; i < 5; i++)
+	// {
+	// 		printf("%d\n", dataList[i]);
+	// }
+
+	//char ptr[10];
+	//scanf("%s", ptr);
+	//ChangeString(ptr);
 	
-#pragma region 삼항 연산자
-	//int data = 0;
-	////        조건 ? 참 : 거짓
-	//data = 10 != 10 ? 100 : 445;
-	//printf("data: %d\n", data);
+	
 #pragma endregion
 
-	char string[10];
+#pragma region 가변 인수
+	//매개변수로 들어오는 값의 갯수와 상관없이 동적으로 인수를 받을 수 있는 인수
+	Information(2, 2, 4);
+	Information(5, 1, 4, 2, 3, 5);
+	
+	
 
-	scanf("%[^\n]s", string);
-
-	printf("string: %s\n", string);
+#pragma endregion
 
 
 	return 0;

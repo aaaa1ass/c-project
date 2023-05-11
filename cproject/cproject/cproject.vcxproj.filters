@@ -71,6 +71,9 @@
     <ClInclude Include="(2023.5.10)함수포인터.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="(2023.5.10)자기참조구조체.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="%282023.4.17%29반복문.h">
