@@ -5,71 +5,77 @@
 #include <math.h>
 #include <string.h>
 #include <stdarg.h>
+#include <stdlib.h>
+#include <time.h>
 
-void Array(int array[],int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		array[i] = 100 * i;
-	}
-}
-
-void ChangeString(char str[])
-{
-	for (int i = 0; str[i] != NULL; i++)
-	{
-		printf("%c",str[i] -= 32);
-	}
-	
-}
-
-void Information(int size, ...)
-{
-	//va_list 각 가변 인자의 시작 주소를 가리키는 포인터
-	va_list argPtr;
-
-	//va_start va_list로 만들어진 포인터에게 가변 인자 중 첫 번째 인자의 주소를 가르쳐주는 매크로
-	va_start(argPtr, size);
-
-	int result = 0;
-
-	for (int i = 0; i < size; i++)
-	{
-		//va_arg 특정 가변 인자를 가리키고 있는 va_list의 포인터를 다음 가변 인자로 이동시켜주는 매크로
-		result += va_arg(argPtr, int);
-	}
-	printf("result: %d\n", result);
-	
-	va_end(argPtr);
-}
 
 int main()
 {
-#pragma region 매개변수 배열
-	// int dataList[5] = { 1,2,3,4,5 };
-	// 
-	// Array(dataList, 5);
-	// 
-	// for (int i = 0; i < 5; i++)
-	// {
-	// 		printf("%d\n", dataList[i]);
-	// }
+#pragma region rand()
+	//0 ~ 32767 사이의 난수 값을 생성
 
-	//char ptr[10];
-	//scanf("%s", ptr);
-	//ChangeString(ptr);
-	
-	
-#pragma endregion
+	//time(): 1970년 1월 1일 0시 (UTC)부터 현재까지 흐른 시간 반환
+	// 단위: 초
 
-#pragma region 가변 인수
-	//매개변수로 들어오는 값의 갯수와 상관없이 동적으로 인수를 받을 수 있는 인수
-	Information(2, 2, 4);
-	Information(5, 1, 4, 2, 3, 5);
-	
-	
+	//srand(time(NULL));
+	//
+	//int value;
+	//
+	//for (int i = 0;i < 5;i++)
+	//{
+	//	value = rand() ;
+	//	printf("value: %d\n", value);
+	//}
+
 
 #pragma endregion
+
+#pragma region up_down
+	//int a = 0;
+	//srand(time(NULL));
+	//a = rand() % 50 + 1;
+	//int life = 5;
+	//int q = 0;
+	//while (life)
+	//{
+	//	printf("현재 목숨: %d\n입력: ",life);
+	//	scanf("%d", &q);
+	//	
+	//	if (a > q)
+	//	{
+	//		printf("UP\n");
+	//		life--;
+	//	}
+	//	else if (a < q)
+	//	{
+	//		printf("DOWN\n");
+	//		life--;
+	//	}
+	//	else
+	//		break;
+	//
+	
+	//}
+	//
+	//if (life)
+	//{
+	//	printf("You win\n");
+	//}
+	//else
+	//{
+	//	printf("You lose\n");
+	//}
+
+#pragma endregion
+
+#pragma region 정수의 승격
+	// char 자료형과 short 자료형 연산이 이루어질 때 cpu가 처리하기에 가장 적합한 크기의 정수 자료형 int로 자동 형변환되는 과정
+	char data1 = 5;
+	short data2 = 10;
+	printf("data1, data2를 연산한 크기: %d\n", sizeof(data1 + data2));// 4 byte
+#pragma endregion
+
+
 
 
 	return 0;
