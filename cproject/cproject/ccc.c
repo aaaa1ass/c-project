@@ -7,76 +7,75 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <time.h>
+#include <conio.h>
+#include <windows.h>
 
+#define UP 72
+#define DOWN 80
+#define RIGHT 77
+#define LEFT 75
 
 int main()
 {
-#pragma region rand()
-	//0 ~ 32767 사이의 난수 값을 생성
-
-	//time(): 1970년 1월 1일 0시 (UTC)부터 현재까지 흐른 시간 반환
-	// 단위: 초
-
-	//srand(time(NULL));
-	//
-	//int value;
-	//
-	//for (int i = 0;i < 5;i++)
+#pragma region _kbhit() 함수
+//↑↓출력
+	//char key = 0;
+	//while (1)
 	//{
-	//	value = rand() ;
-	//	printf("value: %d\n", value);
-	//}
-
-
-#pragma endregion
-
-#pragma region up_down
-	//int a = 0;
-	//srand(time(NULL));
-	//a = rand() % 50 + 1;
-	//int life = 5;
-	//int q = 0;
-	//while (life)
-	//{
-	//	printf("현재 목숨: %d\n입력: ",life);
-	//	scanf("%d", &q);
+	//	if (_kbhit())//키보드 입력을 확인하는 함수
+	//	{
+	//		key = _getch(); //방향키 입력 시 224 00이 들어오게 되므로 앞에 있는 값 224를 삭제
+	//
+	//		if (key == -32)
+	//			key = _getch();
+	//
+	//		//↑ 스캔 코드 72
+	//		if (key == UP)
+	//			printf("↑\n");
+	//		//↓ 스캔 코드 80
+	//		else if (key == DOWN)
+	//			printf("↓\n");
+	//		//→ 77
+	//		else if (key == RIGHT)
+	//			printf("→\n");
+	//		//← 75
+	//		else if (key == LEFT)
+	//			printf("←\n");
+	//		else
+	//			printf("...\n");
+	//		
+	//
+	//	}
+	//	printf("다른 작업중\n");
 	//	
-	//	if (a > q)
-	//	{
-	//		printf("UP\n");
-	//		life--;
-	//	}
-	//	else if (a < q)
-	//	{
-	//		printf("DOWN\n");
-	//		life--;
-	//	}
-	//	else
-	//		break;
-	//
-	
 	//}
-	//
-	//if (life)
-	//{
-	//	printf("You win\n");
-	//}
-	//else
-	//{
-	//	printf("You lose\n");
-	//}
-
 #pragma endregion
 
-#pragma region 정수의 승격
-	// char 자료형과 short 자료형 연산이 이루어질 때 cpu가 처리하기에 가장 적합한 크기의 정수 자료형 int로 자동 형변환되는 과정
-	char data1 = 5;
-	short data2 = 10;
-	printf("data1, data2를 연산한 크기: %d\n", sizeof(data1 + data2));// 4 byte
+#pragma region GetAsyncKeyState()
+	//while (1)
+	//{
+	//	if (GetAsyncKeyState(VK_UP))
+	//	{
+	//		Sleep(100);//1000 -> 1초 대기
+	//		printf("↑\n");
+	//	}
+	//	if (GetAsyncKeyState(VK_LEFT))
+	//	{
+	//		Sleep(100);
+	//		printf("←\n");
+	//	}
+	//	if (GetAsyncKeyState(VK_DOWN))
+	//	{
+	//		Sleep(100);
+	//		printf("↓\n");
+	//	}
+	//	if (GetAsyncKeyState(VK_RIGHT))
+	//	{
+	//		Sleep(100);
+	//		printf("→\n");
+	//	}
+	//}
 #pragma endregion
-
-
-
 
 	return 0;
 }			

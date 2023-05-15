@@ -145,6 +145,7 @@
     <ClInclude Include="(2023.5.10)자기참조구조체.h" />
     <ClInclude Include="(2023.5.10)함수포인터.h" />
     <ClInclude Include="(2023.5.11).h" />
+    <ClInclude Include="(2023.5.12)랜덤함수.h" />
     <ClInclude Include="(2023.5.2)포인터배열.h" />
     <ClInclude Include="(2023.5.3)이차원배열.h" />
     <ClInclude Include="(2023.5.4)실수저장방법.h" />
