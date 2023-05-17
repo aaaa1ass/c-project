@@ -10,13 +10,6 @@
 #include <conio.h>
 #include <windows.h>
 
-//좌표 이동 함수
-void GotoXY(int x, int y)
-{
-	COORD position = { x,y };
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
-}
-
 #define UP 72
 #define DOWN 80
 #define RIGHT 77
@@ -24,72 +17,41 @@ void GotoXY(int x, int y)
 
 int main()
 {
-#pragma region 좌표 이동 함수
-	//char key = 0;
-	//int x = 0;
-	//int y = 0;
-	//while (1)
-	//{
-	//	GotoXY(x, y);
-	//	printf("★");
-	//
-	//	if (_kbhit())
-	//	{
-	//		key = _getch(); 
-	//	 
-	//		if (key == -32)
-	//			key = _getch();
-	//	 
-	//		if (key == UP && y>0)
-	//			y--;
-	//		else if (key == DOWN)
-	//			y++;
-	//		else if (key == RIGHT)
-	//			x+=2;
-	//		else if (key == LEFT && x > 0)
-	//			x-=2;						 
-	//	}
-	//	system("cls");
-	//}
-#pragma endregion
-
-
-#pragma region 문자열 길이 함수(strlen)
-	//문자열의 크기 반환
+#pragma region 파일 입출력
+	//파일 쓰기
+	//fopen("파일의 이름.확장자", 파일 모드)
+	// w: write
+	// r: read
 	
-	//가장 마지막의 NULL문자를 포함하지 않고 크기를 계산
-	//char* string = "Visual";
-	//int size = strlen(string);
-	//printf("size: %d\n", size);
-#pragma endregion
-
-#pragma region 회문
-	//int flag = 1;
-	//char* string = "";
-	//for (int i = 0; i < strlen(string)/2; i++)
-	//{
-	//	
-	//	if (string[i] != string[strlen(string) - i - 1])
-	//	{
-	//		flag = 0;
-	//		printf("%c != %c\n", string[i], string[strlen(string) - i - 1]);
-	//		break;
-	//	}
-	//	else
-	//	{
-	//		printf("%c == %c\n", string[i], string[strlen(string) - i - 1]);
-	//	}
-	//}
+	//텍스트 파일 쓰기 모드로 열기
+	//FILE* filePtr = fopen("DB.txt", "w");
 	//
-	//if (flag)
-	//{
-	//	printf("회문 o\n");
-	//}
-	//else
-	//{
-	//	printf("회문 x\n");
-	//}
+	//fputs("ID\n", filePtr);
+	//fputs("Password\n", filePtr);
+	////파일 포인터 닫기
+	//fclose(filePtr);
+	int screen = 1;
+	//1 full screen
+	//2 window
+	FILE* readPtr = NULL;
+	while (1) 
+	{
+		//SetConsoleDisplayMode(GetStdHandle(STD_OUTPUT_HANDLE), screen, 0);
 
+		//파일 읽기
+		readPtr = fopen("Monster.txt", "r");
+		char buffer[10000] = { 0, };
+		//파일 전체 읽기
+		fread(buffer, 1, 10000, readPtr);
+		printf("%s", buffer);
+		fclose(readPtr);
+		system("cls");
+		if (GetAsyncKeyState(VK_SPACE))
+		{
+			exit(0);
+		}
+	}
+	fclose(readPtr);
 #pragma endregion
 
 	return 0;
