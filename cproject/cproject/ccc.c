@@ -13,12 +13,12 @@
 #define UP 72
 #define DOWN 80
 #define RIGHT 77
-#define LEFT 77
+#define LEFTsf 77
 
 int main()
 {
-#pragma region µ¿Àû ¹è¿­
-	// heapÀ» ÀÌ¿ëÇÏ¿© ¹è¿­ Å©±â¸¦ ½ÇÇà ½Ã°£¿¡ °¡º¯ÀûÀ¸·Î ¹Ù²Ü ¼ö ÀÖ´Â ¹è¿­
+#pragma region ë™ì  ë°°ì—´
+	// heapì„ ì´ìš©í•˜ì—¬ ë°°ì—´ í¬ê¸°ë¥¼ ì‹¤í–‰ ì‹œê°„ì— ê°€ë³€ì ìœ¼ë¡œ ë°”ê¿€ ìˆ˜ ìˆëŠ” ë°°ì—´
 	//
 	//int size = 10;
 	//scanf("%d", &size);
@@ -34,7 +34,7 @@ int main()
 	//free(arrayPtr);
 #pragma endregion
 
-#pragma region fflush() ÇÔ¼ö
+#pragma region fflush() í•¨ìˆ˜
 	//char a, b, c;
 	//scanf("%c" ,&a);
 	//fflush(stdin);
@@ -50,7 +50,7 @@ int main()
 	//printf("c: %c\n", c);
 #pragma endregion
 
-#pragma region ¹®ÀÚ¿­ µÚÁı±â
+#pragma region ë¬¸ìì—´ ë’¤ì§‘ê¸°
 	//char string[100];
 	//scanf("%[^\n]s", string);
 	////char c;
