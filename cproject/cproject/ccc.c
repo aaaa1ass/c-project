@@ -13,7 +13,7 @@
 #define UP 72
 #define DOWN 80
 #define RIGHT 77
-#define LEFT 75
+#define LEFT 77
 
 int main()
 {
