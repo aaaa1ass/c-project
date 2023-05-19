@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ccc.c" />
+    <ClCompile Include="ccc.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="%282023.4.12%29변수.h" />
@@ -149,6 +149,7 @@
     <ClInclude Include="(2023.5.15)키입력함수.h" />
     <ClInclude Include="(2023.5.16)좌표이동함수.h" />
     <ClInclude Include="(2023.5.17)파일입출력.h" />
+    <ClInclude Include="(2023.5.18)동적배열.h" />
     <ClInclude Include="(2023.5.2)포인터배열.h" />
     <ClInclude Include="(2023.5.3)이차원배열.h" />
     <ClInclude Include="(2023.5.4)실수저장방법.h" />
