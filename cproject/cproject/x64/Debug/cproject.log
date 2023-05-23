@@ -1,4 +1,5 @@
 ﻿  ccc.cpp
-C:\새폴\c-project\cproject\cproject\ccc.cpp(21,21): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\cproject\ccc.cpp(21,23): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\새폴\c-project\cproject\cproject\ccc.cpp(28,21): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\새폴\c-project\cproject\cproject\ccc.cpp(28,23): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\새폴\c-project\cproject\cproject\ccc.cpp(70,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   cproject.vcxproj -> C:\새폴\c-project\cproject\x64\Debug\cproject.exe

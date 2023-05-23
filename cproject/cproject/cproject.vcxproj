@@ -152,6 +152,7 @@
     <ClInclude Include="(2023.5.18)동적배열.h" />
     <ClInclude Include="(2023.5.19)더블버퍼링.h" />
     <ClInclude Include="(2023.5.2)포인터배열.h" />
+    <ClInclude Include="%282023.5.22%29a게임.h" />
     <ClInclude Include="(2023.5.3)이차원배열.h" />
     <ClInclude Include="(2023.5.4)실수저장방법.h" />
     <ClInclude Include="SoundManager.h" />
