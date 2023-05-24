@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="%282023.4.12%29변수.h" />
     <ClInclude Include="%282023.4.13%29비트.h" />
+    <ClInclude Include="(2023.05.23)빌드과정.h" />
     <ClInclude Include="(2023.4.14)조건문.h" />
     <ClInclude Include="(2023.4.18)포인터.h" />
     <ClInclude Include="(2023.4.19)포인터상수.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="%282023.5.22%29a게임.h" />
     <ClInclude Include="(2023.5.3)이차원배열.h" />
     <ClInclude Include="(2023.5.4)실수저장방법.h" />
+    <ClInclude Include="LoadManager.h" />
     <ClInclude Include="SoundManager.h" />
   </ItemGroup>
   <ItemGroup>

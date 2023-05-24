@@ -98,6 +98,12 @@
     <ClInclude Include="%282023.5.22%29a게임.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="(2023.05.23)빌드과정.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="%282023.4.17%29반복문.h">
