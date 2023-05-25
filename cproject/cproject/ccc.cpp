@@ -1,92 +1,33 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <limits.h>
-#include <malloc.h>
-#include <math.h>
 #include <string.h>
-#include <stdarg.h>
-#include <stdlib.h>
-#include <time.h>
-#include <conio.h>
-#include <windows.h>
 
-#include "../cproject/FrameWork/LoadManager.h"
-
-#define UP 72
-#define DOWN 80
-//#define RIGHT 77
-//#define LEFT 75
-
-void GotoXY(int x, int y)
+int StringLength(const char * string)
 {
-	COORD position = { x,y };
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
+	int count = 0;
+	for (int i = 0; string[i]; i++)
+		count++;
+	return count;
 }
 
-typedef struct Select
-{
-	int x,y;
-	const char* shape;
-} Select;
-
-
-void Keyboard(Select * selectPtr)
-{
-	char key = 0;
-	if (_kbhit())
-	{
-		key = _getch();
-
-		if (key == -32)
-		{
-			key = _getch();
-		}
-
-		switch (key)
-		{
-		case UP: selectPtr->y -= 5;
-			break;
-		case DOWN: selectPtr->y += 5;
-			break;
-		}
-		system("cls");
-	}
-}
-
-void Typing(unsigned int speed, const char * content)
-{
-	int i = 0;
-
-	while (content[i] != '\0')
-	{
-		printf("%c", content[i++]);
-		fflush(stdout);
-		Sleep(speed);
-	}
-
-}
 
 int main()
 {
-	//ReadtxtFile("Resources/DB.txt");
-	//Typing(200, "Resources");
+	//문자열 길이 함수 strlen
+	int value = StringLength("Video");
+	printf("value: %d\n", value);
+
+	//문자열 복사 함수 strcpy
 	
-	int stage = 0;
-	
-	Select select = { 15,29,"☞" };
-	
-	while (1)
-	{
-		GotoXY(select.x, select.y);
-		Keyboard(&select);
-		switch (stage)
-		{
-		case 0: ReadtxtFile("Resources/DB.txt");
-			break;
-		case 1: ReadtxtFile("Resources/Monster.txt");
-			break;
-		}
-	}
+	//문자열 연결 함수 strcat
+	char content1[20] = { "Hello" };
+	char content2[10] = {"Update"};
+
+	strcat(content1, content2);
+	//printf("%s", content1);
+
+
+
 
 	return 0;
 }

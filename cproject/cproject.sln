@@ -5,6 +5,10 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cproject", "cproject\cproject.vcxproj", "{B480B400-A0CE-4085-A827-37BAE530ABCA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MapEditor", "MapEditor.c\MapEditor.c.vcxproj", "{F1495CB7-4B34-459E-BCD2-76A548C00993}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DJMIN", "DJMIN\DJMIN.vcxproj", "{DD665FBF-8FD0-43F7-9E79-69555BE0A37B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +25,22 @@ Global
 		{B480B400-A0CE-4085-A827-37BAE530ABCA}.Release|x64.Build.0 = Release|x64
 		{B480B400-A0CE-4085-A827-37BAE530ABCA}.Release|x86.ActiveCfg = Release|Win32
 		{B480B400-A0CE-4085-A827-37BAE530ABCA}.Release|x86.Build.0 = Release|Win32
+		{F1495CB7-4B34-459E-BCD2-76A548C00993}.Debug|x64.ActiveCfg = Debug|x64
+		{F1495CB7-4B34-459E-BCD2-76A548C00993}.Debug|x64.Build.0 = Debug|x64
+		{F1495CB7-4B34-459E-BCD2-76A548C00993}.Debug|x86.ActiveCfg = Debug|Win32
+		{F1495CB7-4B34-459E-BCD2-76A548C00993}.Debug|x86.Build.0 = Debug|Win32
+		{F1495CB7-4B34-459E-BCD2-76A548C00993}.Release|x64.ActiveCfg = Release|x64
+		{F1495CB7-4B34-459E-BCD2-76A548C00993}.Release|x64.Build.0 = Release|x64
+		{F1495CB7-4B34-459E-BCD2-76A548C00993}.Release|x86.ActiveCfg = Release|Win32
+		{F1495CB7-4B34-459E-BCD2-76A548C00993}.Release|x86.Build.0 = Release|Win32
+		{DD665FBF-8FD0-43F7-9E79-69555BE0A37B}.Debug|x64.ActiveCfg = Debug|x64
+		{DD665FBF-8FD0-43F7-9E79-69555BE0A37B}.Debug|x64.Build.0 = Debug|x64
+		{DD665FBF-8FD0-43F7-9E79-69555BE0A37B}.Debug|x86.ActiveCfg = Debug|Win32
+		{DD665FBF-8FD0-43F7-9E79-69555BE0A37B}.Debug|x86.Build.0 = Debug|Win32
+		{DD665FBF-8FD0-43F7-9E79-69555BE0A37B}.Release|x64.ActiveCfg = Release|x64
+		{DD665FBF-8FD0-43F7-9E79-69555BE0A37B}.Release|x64.Build.0 = Release|x64
+		{DD665FBF-8FD0-43F7-9E79-69555BE0A37B}.Release|x86.ActiveCfg = Release|Win32
+		{DD665FBF-8FD0-43F7-9E79-69555BE0A37B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

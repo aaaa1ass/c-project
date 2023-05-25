@@ -161,10 +161,6 @@ int main()
 	// 7 ?˜ì–‘
 	// 8 ?Œìƒ‰
 	// 
-	//
-
-
-
 
 	while (1)
 	{
@@ -195,31 +191,7 @@ int main()
 		// 3. êµì²´??ë²„í¼???´ìš©???? œ
 		ScreenClear();
 	}
-	//while (1)
-//{
-//	GotoXY(x, y);
-//	printf("??);
-//
-//	if (_kbhit())
-//	{
-//		key = _getch(); 
-//	 
-//		if (key == -32)
-//			key = _getch();
-//	 
-//		if (key == UP && y>0)
-//			y--;
-//		else if (key == DOWN)
-//			y++;
-//		else if (key == RIGHT)
-//			x+=2;
-//		else if (key == LEFT && x > 0)
-//			x-=2;						 
-//	}
-//	system("cls");
-//}
 
-	// ê²Œì„??ì¢…ë£Œ?˜ì—ˆ????ë²„í¼ë¥??´ì œ?©ë‹ˆ??
 	ScreenRelease();
 
 
