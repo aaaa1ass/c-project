@@ -141,13 +141,6 @@ void ScreenPrint(int x, int y, const char* string)
 
 int main()
 {
-	PlaySound(TEXT("Sound.wav"), NULL, SND_ASYNC);
-	PlaySound(TEXT("Sound.wav"), NULL, SND_ASYNC | SND_LOOP);// 반복 ?�생
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 1);
-	Player player = { 5, 5, "// § //" };
-
-	// 1. 버퍼 초기??
-	ScreenInit();
 
 	char key = 0;
 
@@ -160,14 +153,8 @@ int main()
 			if (key == -32)
 				key = _getch();
 
-			if (key == UP && player.y > 0)
-				player.y--;
-			else if (key == DOWN)
-				player.y++;
-			else if (key == RIGHT)
-				player.x += 2;
-			else if (key == LEFT && player.x > 0)
-				player.x -= 2;
+			
+				
 		}
 
 		GotoXY(player.x, player.y);

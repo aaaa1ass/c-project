@@ -155,6 +155,7 @@
     <ClInclude Include="(2023.5.2)포인터배열.h" />
     <ClInclude Include="%282023.5.22%29a게임.h" />
     <ClInclude Include="(2023.5.24)상대경로절대경로.h" />
+    <ClInclude Include="(2023.5.25)문자열 관련 함수.h" />
     <ClInclude Include="(2023.5.3)이차원배열.h" />
     <ClInclude Include="(2023.5.4)실수저장방법.h" />
     <ClInclude Include="LoadManager.h" />
