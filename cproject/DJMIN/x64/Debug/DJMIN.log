@@ -1,11 +1,11 @@
 ﻿  Source.cpp
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(124,21): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(124,23): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(132,17): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(132,24): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(135,34): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(135,46): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(173,27): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(173,30): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(186,2): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(329,26): error C2075: 'check_array': initialization requires a brace-enclosed initializer list
+C:\새폴\c-project\cproject\DJMIN\Source.cpp(1337,21): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\새폴\c-project\cproject\DJMIN\Source.cpp(1337,23): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\새폴\c-project\cproject\DJMIN\Source.cpp(1345,17): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\새폴\c-project\cproject\DJMIN\Source.cpp(1345,24): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\새폴\c-project\cproject\DJMIN\Source.cpp(1348,34): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\새폴\c-project\cproject\DJMIN\Source.cpp(1348,46): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\새폴\c-project\cproject\DJMIN\Source.cpp(1386,27): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\새폴\c-project\cproject\DJMIN\Source.cpp(1386,30): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\새폴\c-project\cproject\DJMIN\Source.cpp(1399,2): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
+  DJMIN.vcxproj -> C:\새폴\c-project\cproject\x64\Debug\DJMIN.exe
