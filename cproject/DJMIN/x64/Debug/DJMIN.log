@@ -1,11 +1,11 @@
 ﻿  Source.cpp
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(1337,21): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(1337,23): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(1345,17): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(1345,24): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(1348,34): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(1348,46): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(1386,27): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(1386,30): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\새폴\c-project\cproject\DJMIN\Source.cpp(1399,2): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
-  DJMIN.vcxproj -> C:\새폴\c-project\cproject\x64\Debug\DJMIN.exe
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1744,21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1744,23): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1752,17): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1752,24): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1755,34): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1755,46): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1793,27): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1793,30): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1806,2): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  DJMIN.vcxproj -> C:\Users\GoodLife\Desktop\두견\c-project\cproject\x64\Debug\DJMIN.exe
