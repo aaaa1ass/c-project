@@ -7,6 +7,21 @@
 #include <string.h>
 #include <stdarg.h>
 
+void check_bottons(int time, char key, int* score)
+{
+	char bottons[4] = { 'a', 's', ';', '\'' };
+	
+	for (int i = 0; b_info_s[i].order <= time; i++)
+	{
+		for(int j = 33; j < 30; j--)
+			if (b_state_s[i].checked == 0 && b_info_s[i].order + j == time && key == bottons[b_info_s[i].key])
+			{
+				*score++;
+				b_state_s[i].checked = 1;
+			}
+	}
+}
+
 void Array(int array[], int size)
 {
 	for (int i = 0; i < size; i++)
