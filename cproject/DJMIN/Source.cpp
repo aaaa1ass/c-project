@@ -1767,11 +1767,57 @@ typedef struct Block_state {
 	int location, checked;
 }B_state;
 
-B_info b_info_s[100] = 
+#define B 32
+#define b 4
+B_info b_info_s[100] =
 {
-	{32,0},
-	{64,1}
+	//0:00
+	{B * 1,0},
+	{B * 2,1},
+	{B * 3,2},
+	{B * 4,3},
 
+	{B * 5,0},
+	{B * 5 + b * 4,2},
+	{B * 6,1},
+	{B * 6 + b * 4,3},
+
+	//0:16
+	{B * 7,1},
+	{B * 7 + b * 3,0},
+	{B * 7 + b * 3 + 2,3},
+	{B * 7 + b * 6,2},
+	{B * 8 + b * 3,0},
+	{B * 8 + b * 3 + 2,3},
+
+	{B * 9,1},
+	{B * 9 + b * 3,0},
+	{B * 9 + b * 3 + 2,3},
+	{B * 9 + b * 6,2},
+	{B * 10 + b * 3,0},
+	{B * 10 + b * 3 + 2,3},
+
+	{B * 11,1},
+	{B * 11 + b * 3,0},
+	{B * 11 + b * 3 + 2,3},
+	{B * 11 + b * 6,2},
+	{B * 12 + b * 3,0},
+	{B * 12 + b * 3 + 2,3},
+
+	{B * 13,1},
+	{B * 13 + b * 3,0},
+	{B * 13 + b * 3 + 2,3},
+	{B * 13 + b * 6,2},
+	{B * 14 + b * 2,3},
+	{B * 14 + b * 3,2},
+	{B * 14 + b * 4,3},
+	{B * 14 + b * 5,2},
+	{B * 14 + b * 6,1},
+	{B * 14 + b * 7,0},
+
+	//0:32
+	//0:48
+	//
 };
 B_state b_state_s[100] = {
 	{0,0}
@@ -1975,10 +2021,10 @@ void check_bottons_new(int time, char key, int* score)
 
 	for (int i = 0; b_info_s[i].order <= time; i++)
 	{
-		for (int j = 33; j < 30; j--)
+		for (int j = 34; j > 29; j--)
 			if (b_state_s[i].checked == 0 && b_info_s[i].order + j == time && key == bottons[b_info_s[i].key])
 			{
-				*score++;
+				*score += 1;
 				b_state_s[i].checked = 1;
 				break;
 			}
@@ -2122,7 +2168,7 @@ int main()
 		{
 			print_background(score);
 
-			print_accuracy();
+			//print_accuracy();
 
 			//print_blocks(time, block_array_1);
 			print_blocks_new(time);
@@ -2155,11 +2201,12 @@ int main()
 			ScreenClear();
 
 			end = clock();
-			if ((float)(end - start) > 62.5)
-			{
-				time++;
-				start = clock();
-			}
+			//if ((float)(end - start) > 62.5)
+			//{
+			//	time++;
+			//	start = clock();
+			//}
+			time = (float)((end - start) / 62.5);
 		}
 
 		if (game_over == 0)
