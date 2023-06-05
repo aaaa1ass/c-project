@@ -1764,63 +1764,201 @@ typedef struct Block_infomation {
 }B_info;
 
 typedef struct Block_state {
-	int location, checked;
+	int checked;
 }B_state;
 
-#define B 32
-#define b 4
-B_info b_info_s[100] =
+#define TWO_BARS 32
+#define QUARTER_BAR 4
+B_info b_info_s[] =
 {
 	//0:00
-	{B * 1,0},
-	{B * 2,1},
-	{B * 3,2},
-	{B * 4,3},
+	{TWO_BARS * 1,0},
+	{TWO_BARS * 2,1},
+	{TWO_BARS * 3,2},
+	{TWO_BARS * 4,3},
 
-	{B * 5,0},
-	{B * 5 + b * 4,2},
-	{B * 6,1},
-	{B * 6 + b * 4,3},
+	{TWO_BARS * 5,0},
+	{TWO_BARS * 5 + QUARTER_BAR * 4,2},
+	{TWO_BARS * 6,1},
+	{TWO_BARS * 6 + QUARTER_BAR * 4,3},
 
 	//0:16
-	{B * 7,1},
-	{B * 7 + b * 3,0},
-	{B * 7 + b * 3 + 2,3},
-	{B * 7 + b * 6,2},
-	{B * 8 + b * 3,0},
-	{B * 8 + b * 3 + 2,3},
+	{TWO_BARS * 7,1},
+	{TWO_BARS * 7 + QUARTER_BAR * 3,0},
+	{TWO_BARS * 7 + QUARTER_BAR * 3 + 2,3},
+	{TWO_BARS * 7 + QUARTER_BAR * 6,2},
+	{TWO_BARS * 8 + QUARTER_BAR * 3,0},
+	{TWO_BARS * 8 + QUARTER_BAR * 3 + 2,3},
 
-	{B * 9,1},
-	{B * 9 + b * 3,0},
-	{B * 9 + b * 3 + 2,3},
-	{B * 9 + b * 6,2},
-	{B * 10 + b * 3,0},
-	{B * 10 + b * 3 + 2,3},
+	{TWO_BARS * 9,1},
+	{TWO_BARS * 9 + QUARTER_BAR * 3,0},
+	{TWO_BARS * 9 + QUARTER_BAR * 3 + 2,3},
+	{TWO_BARS * 9 + QUARTER_BAR * 6,2},
+	{TWO_BARS * 10 + QUARTER_BAR , 2 },
+	{TWO_BARS * 10 + QUARTER_BAR * 3,0},
+	{TWO_BARS * 10 + QUARTER_BAR * 3 + 2,3},
 
-	{B * 11,1},
-	{B * 11 + b * 3,0},
-	{B * 11 + b * 3 + 2,3},
-	{B * 11 + b * 6,2},
-	{B * 12 + b * 3,0},
-	{B * 12 + b * 3 + 2,3},
+	{TWO_BARS * 11,1},
+	{TWO_BARS * 11 + QUARTER_BAR * 3,0},
+	{TWO_BARS * 11 + QUARTER_BAR * 3 + 2,3},
+	{TWO_BARS * 11 + QUARTER_BAR * 6,2},
+	{TWO_BARS * 12 + QUARTER_BAR * 3,0},
+	{TWO_BARS * 12 + QUARTER_BAR * 3 + 2,3},
 
-	{B * 13,1},
-	{B * 13 + b * 3,0},
-	{B * 13 + b * 3 + 2,3},
-	{B * 13 + b * 6,2},
-	{B * 14 + b * 2,3},
-	{B * 14 + b * 3,2},
-	{B * 14 + b * 4,3},
-	{B * 14 + b * 5,2},
-	{B * 14 + b * 6,1},
-	{B * 14 + b * 7,0},
+	{TWO_BARS * 13,1},
+	{TWO_BARS * 13 + QUARTER_BAR * 3,0},
+	{TWO_BARS * 13 + QUARTER_BAR * 3 + 2,3},
+	{TWO_BARS * 13 + QUARTER_BAR * 6,2},
+	{TWO_BARS * 14 + QUARTER_BAR * 2,3},
+	{TWO_BARS * 14 + QUARTER_BAR * 3,2},
+	{TWO_BARS * 14 + QUARTER_BAR * 4,3},
+	{TWO_BARS * 14 + QUARTER_BAR * 5,2},
+	{TWO_BARS * 14 + QUARTER_BAR * 6,1},
+	{TWO_BARS * 14 + QUARTER_BAR * 7,0},
 
 	//0:32
+	{TWO_BARS * 15,1},
+	{TWO_BARS * 15 + QUARTER_BAR * 1,0},
+	{TWO_BARS * 15 + QUARTER_BAR * 2,0},
+	{TWO_BARS * 15 + QUARTER_BAR * 3,2},
+	{TWO_BARS * 15 + QUARTER_BAR * 4,3},
+	{TWO_BARS * 16, 3},
+	{TWO_BARS * 16 + QUARTER_BAR * 1, 1},
+	{TWO_BARS * 16 + QUARTER_BAR * 2, 1},
+	{TWO_BARS * 16 + QUARTER_BAR * 3, 2},
+	{TWO_BARS * 16 + QUARTER_BAR * 4, 0},
+	{TWO_BARS * 16 + QUARTER_BAR * 5, 0},
+
+	{TWO_BARS * 17,1},
+	{TWO_BARS * 17 + QUARTER_BAR * 1,0},
+	{TWO_BARS * 17 + QUARTER_BAR * 2,0},
+	{TWO_BARS * 17 + QUARTER_BAR * 3,2},
+	{TWO_BARS * 17 + QUARTER_BAR * 4,3},
+	{TWO_BARS * 18, 3},
+	{TWO_BARS * 18 + QUARTER_BAR * 1, 1},
+	{TWO_BARS * 18 + QUARTER_BAR * 2, 1},
+	{TWO_BARS * 18 + QUARTER_BAR * 3, 2},
+	{TWO_BARS * 18 + QUARTER_BAR * 4, 0},
+	{TWO_BARS * 18 + QUARTER_BAR * 5, 0},
+
+	{TWO_BARS * 19, 3},
+	{TWO_BARS * 19 + QUARTER_BAR * 1, 1},
+	{TWO_BARS * 19 + QUARTER_BAR * 2, 1},
+	{TWO_BARS * 19 + QUARTER_BAR * 3, 2},
+	{TWO_BARS * 19 + QUARTER_BAR * 4, 0},
+	{TWO_BARS * 19 + QUARTER_BAR * 5, 0},
+	{TWO_BARS * 20,1},
+	{TWO_BARS * 20 + QUARTER_BAR * 1,0},
+	{TWO_BARS * 20 + QUARTER_BAR * 2,0},
+	{TWO_BARS * 20 + QUARTER_BAR * 3,2},
+	{TWO_BARS * 20 + QUARTER_BAR * 4,3},
+
+	{TWO_BARS * 21, 3},
+	{TWO_BARS * 21 + QUARTER_BAR * 1, 1},
+	{TWO_BARS * 21 + QUARTER_BAR * 2, 1},
+	{TWO_BARS * 21 + QUARTER_BAR * 3, 2},
+	{TWO_BARS * 21 + QUARTER_BAR * 4, 0},
+	{TWO_BARS * 21 + QUARTER_BAR * 5, 0},
+	{TWO_BARS * 22, 0},
+	{TWO_BARS * 22 + QUARTER_BAR * 1, 1},
+	{TWO_BARS * 22 + QUARTER_BAR * 2, 0},
+	{TWO_BARS * 22 + QUARTER_BAR * 3, 2},
+	{TWO_BARS * 22 + QUARTER_BAR * 4, 3},
+	{TWO_BARS * 22 + QUARTER_BAR * 5, 2},
+	{TWO_BARS * 22 + QUARTER_BAR * 6, 1},
+	{TWO_BARS * 22 + QUARTER_BAR * 7, 0},
+
 	//0:48
-	//
+	{TWO_BARS * 23, 2},
+	{TWO_BARS * 23 + QUARTER_BAR * 1, 0},
+	{TWO_BARS * 23 + QUARTER_BAR * 1, 1},
+	{TWO_BARS * 23 + QUARTER_BAR * 2, 1},
+	{TWO_BARS * 23 + QUARTER_BAR * 3, 2},
+	{TWO_BARS * 23 + QUARTER_BAR * 3, 3},
+	{TWO_BARS * 23 + QUARTER_BAR * 4, 2},
+	{TWO_BARS * 23 + QUARTER_BAR * 4, 3},
+	{TWO_BARS * 23 + QUARTER_BAR * 5, 1},
+	{TWO_BARS * 23 + QUARTER_BAR * 6, 0},
+	{TWO_BARS * 23 + QUARTER_BAR * 6, 3},
+	{TWO_BARS * 23 + QUARTER_BAR * 7, 0},
+	{ TWO_BARS * 24, 2 },
+	{ TWO_BARS * 24 + QUARTER_BAR * 1, 0 },
+	{ TWO_BARS * 24 + QUARTER_BAR * 1, 1 },
+	{ TWO_BARS * 24 + QUARTER_BAR * 2, 1 },
+	{ TWO_BARS * 24 + QUARTER_BAR * 3, 2 },
+	{ TWO_BARS * 24 + QUARTER_BAR * 3, 3 },
+	{ TWO_BARS * 24 + QUARTER_BAR * 4, 2 },
+	{ TWO_BARS * 24 + QUARTER_BAR * 4, 3 },
+	{ TWO_BARS * 24 + QUARTER_BAR * 5, 1 },
+	{ TWO_BARS * 24 + QUARTER_BAR * 6, 0 },
+	{ TWO_BARS * 24 + QUARTER_BAR * 6, 3 },
+	{ TWO_BARS * 24 + QUARTER_BAR * 7, 0 },
+	{ TWO_BARS * 25, 2 },
+	{ TWO_BARS * 25 + QUARTER_BAR * 1, 0 },
+	{ TWO_BARS * 25 + QUARTER_BAR * 1, 1 },
+	{ TWO_BARS * 25 + QUARTER_BAR * 2, 1 },
+	{ TWO_BARS * 25 + QUARTER_BAR * 3, 2 },
+	{ TWO_BARS * 25 + QUARTER_BAR * 3, 3 },
+	{ TWO_BARS * 25 + QUARTER_BAR * 4, 2 },
+	{ TWO_BARS * 25 + QUARTER_BAR * 4, 3 },
+	{ TWO_BARS * 25 + QUARTER_BAR * 5, 1 },
+	{ TWO_BARS * 25 + QUARTER_BAR * 6, 0 },
+	{ TWO_BARS * 25 + QUARTER_BAR * 6, 3 },
+	{ TWO_BARS * 25 + QUARTER_BAR * 7, 0 },
+	{ TWO_BARS * 26, 2 },
+	{ TWO_BARS * 26 + QUARTER_BAR * 1, 0 },
+	{ TWO_BARS * 26 + QUARTER_BAR * 1, 1 },
+	{ TWO_BARS * 26 + QUARTER_BAR * 2, 1 },
+	{ TWO_BARS * 26 + QUARTER_BAR * 3, 2 },
+	{ TWO_BARS * 26 + QUARTER_BAR * 3, 3 },
+	{ TWO_BARS * 26 + QUARTER_BAR * 4, 2 },
+	{ TWO_BARS * 26 + QUARTER_BAR * 4, 3 },
+	{ TWO_BARS * 26 + QUARTER_BAR * 5, 1 },
+	{ TWO_BARS * 26 + QUARTER_BAR * 6, 0 },
+	{ TWO_BARS * 26 + QUARTER_BAR * 6, 3 },
+	{ TWO_BARS * 26 + QUARTER_BAR * 7, 0 },
+
+	{ TWO_BARS * 27, 3 },
+	{ TWO_BARS * 27 + QUARTER_BAR * 1, 0 },
+	{ TWO_BARS * 27 + QUARTER_BAR * 2, 1 },
+	{ TWO_BARS * 27 + QUARTER_BAR * 2, 3 },
+	{ TWO_BARS * 27 + QUARTER_BAR * 3, 2 },
+	{ TWO_BARS * 27 + QUARTER_BAR * 3, 0 },
+	{ TWO_BARS * 27 + QUARTER_BAR * 4, 0 },
+	{ TWO_BARS * 27 + QUARTER_BAR * 5, 1 },
+	{ TWO_BARS * 27 + QUARTER_BAR * 6, 2 },
+	{ TWO_BARS * 27 + QUARTER_BAR * 7, 1 },
+	{ TWO_BARS * 28, 3 },
+	{ TWO_BARS * 28 + QUARTER_BAR * 1, 0 },
+	{ TWO_BARS * 28 + QUARTER_BAR * 2, 1 },
+	{ TWO_BARS * 28 + QUARTER_BAR * 2, 3 },
+	{ TWO_BARS * 28 + QUARTER_BAR * 3, 2 },
+	{ TWO_BARS * 28 + QUARTER_BAR * 3, 0 },
+	{ TWO_BARS * 28 + QUARTER_BAR * 4, 0 },
+	{ TWO_BARS * 28 + QUARTER_BAR * 5, 1 },
+	{ TWO_BARS * 28 + QUARTER_BAR * 6, 2 },
+	{ TWO_BARS * 28 + QUARTER_BAR * 7, 1 },
+
+	{ TWO_BARS * 29, 3 },
+	{ TWO_BARS * 29 + QUARTER_BAR * 1, 1 },
+	{ TWO_BARS * 29 + QUARTER_BAR * 2, 2 },
+	{ TWO_BARS * 29 + QUARTER_BAR * 3, 0 },
+	{ TWO_BARS * 29 + QUARTER_BAR * 4, 1 },
+	{ TWO_BARS * 29 + QUARTER_BAR * 5, 3 },
+	{ TWO_BARS * 29 + QUARTER_BAR * 6, 2 },
+	{ TWO_BARS * 29 + QUARTER_BAR * 7, 1 },
+	{ TWO_BARS * 30, 3 },
+	{ TWO_BARS * 30 + QUARTER_BAR * 1, 1 },
+	{ TWO_BARS * 30 + QUARTER_BAR * 2, 2 },
+	{ TWO_BARS * 30 + QUARTER_BAR * 3, 0 },
+	{ TWO_BARS * 30 + QUARTER_BAR * 4, 1 },
+	{ TWO_BARS * 30 + QUARTER_BAR * 5, 3 },
+	{ TWO_BARS * 30 + QUARTER_BAR * 6, 2 },
+	{ TWO_BARS * 30 + QUARTER_BAR * 7, 1 },
+	
 };
-B_state b_state_s[100] = {
-	{0,0}
+B_state b_state_s[2000] = {
+	{0}
 };
 
 int accuracy[4] = { 0 };
@@ -1923,17 +2061,17 @@ void ScreenRelease()
 
 void print_menu(int menu)
 {
-	ScreenPrint(37, 12, "게임시작");
-	ScreenPrint(37, 14, "나가기");
+	ScreenPrint(46, 12, "게임시작");
+	ScreenPrint(46, 14, "나가기");
 	if (menu == 0)
 	{
-		ScreenPrint(36, 12, ">");
-		ScreenPrint(45, 12, "<");
+		ScreenPrint(45, 12, ">");
+		ScreenPrint(54, 12, "<");
 	}
 	else
 	{
-		ScreenPrint(36, 14, ">");
-		ScreenPrint(43, 14, "<");
+		ScreenPrint(45, 14, ">");
+		ScreenPrint(52, 14, "<");
 	}
 
 }
@@ -2017,17 +2155,38 @@ void check_bottons(int time, char key, int* score)
 }
 void check_bottons_new(int time, char key, int* score)
 {
+	int checked = 0;
 	char bottons[4] = { 'a', 's', ';', '\'' };
 
 	for (int i = 0; b_info_s[i].order <= time; i++)
 	{
-		for (int j = 34; j > 29; j--)
+		for (int j = 34; j > 27; j--)
 			if (b_state_s[i].checked == 0 && b_info_s[i].order + j == time && key == bottons[b_info_s[i].key])
 			{
-				*score += 1;
 				b_state_s[i].checked = 1;
-				break;
+
+				if (30 <= j && j >= 32)
+				{
+					*score += 3;
+					accuracy[b_info_s[i].key] = PERFECT;
+					checked = 1;
+				}
+				else if (j == 33 || j == 29)
+				{
+					*score += 2;
+					accuracy[b_info_s[i].key] = NICE;
+					checked = 1;
+				}
+				else
+				{
+					*score += 1;
+					accuracy[b_info_s[i].key] = GOOD;
+					checked = 1;
+				}
+
 			}
+		if (checked == 1)
+			break;
 	}
 }
 void print_hp(int hp)
@@ -2099,6 +2258,9 @@ void init_game(int* time, int* score, int* hp)
 	for (int i = 0; i < HOW_MANY_BOTTONS; i++)
 		for (int j = 0; j < 4; j++)
 			block_array_1[i][j] = block_array_2[i][j];
+	for (int i = 0; i < 2000; i++)
+		b_state_s[i].checked = 0;
+
 }
 void print_accuracy()
 {
@@ -2119,7 +2281,7 @@ int main()
 	int time = 0;
 	int score = 0;
 	char key = 0;
-	int hp = 15000;
+	int hp = 15;
 	int game_over = 0;
 
 	clock_t start, end;
@@ -2168,7 +2330,7 @@ int main()
 		{
 			print_background(score);
 
-			//print_accuracy();
+			print_accuracy();
 
 			//print_blocks(time, block_array_1);
 			print_blocks_new(time);
@@ -2184,18 +2346,28 @@ int main()
 				check_bottons_new(time, key, &score);
 			}
 
-			for (int i = 0; i < 4; i++)
-				if (block_array_1[time - 32][i] == 1)
+			//for (int i = 0; i < 4; i++)
+			//	if (block_array_1[time - 32][i] == 1)
+			//		hp--;
+
+			for (int i = 0; b_info_s[i].order <= time && i < time; i++)
+			{
+				if (b_state_s[i].checked == 0 && b_info_s[i].order + 35 < time)
+				{
+					b_state_s[i].checked = 1;
 					hp--;
-			if (hp == 0)
+				}
+			}
+
+			if (hp <= 0)
 				break;
-			else if (time > 7000)
+			else if (time > 1100)
 			{
 				game_over = 1;
 				break;
 			}
-
-			//print_hp(hp);
+			
+			print_hp(hp);
 
 			ScreenFlipping();
 			ScreenClear();

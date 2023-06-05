@@ -1,12 +1,12 @@
 ﻿  Source.cpp
-C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1833,21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1833,23): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1841,17): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1841,24): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1844,34): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1844,46): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1882,27): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1882,30): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1895,2): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(2209,33): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1971,21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1971,23): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1979,17): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1979,24): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1982,34): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(1982,46): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(2020,27): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(2020,30): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(2033,2): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\GoodLife\Desktop\두견\c-project\cproject\DJMIN\Source.cpp(2381,33): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   DJMIN.vcxproj -> C:\Users\GoodLife\Desktop\두견\c-project\cproject\x64\Debug\DJMIN.exe
